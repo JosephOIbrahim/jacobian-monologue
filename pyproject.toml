@@ -1,0 +1,27 @@
+[project]
+name = "internal-monologue"
+version = "0.1.0"
+description = "J-space x substrate probe. Experiment repo."
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "transformers>=5.5",
+    "torch",
+    "matplotlib",
+    "pytest",
+]
+
+# the substrate is installed editable from a sibling checkout (default <path-to-substrate>;
+# override via SUBSTRATE_REPO env var). See README. Not vendored -- it is the instrument.
+# PINNED SHA AT EXPERIMENT START: substrate-mile1-frozen
+# If the substrate moves off this SHA mid-experiment, every prior result is void.
+# The SHA is re-recorded in every results/*.json. Verify before each mile.
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/probe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

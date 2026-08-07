@@ -1,0 +1,22 @@
+# The Jacobian lens is a DEPENDENCY, not vendored here. Install it separately
+# (Apache-2.0, github.com/anthropics/jacobian-lens). See INSTALL.md.
+third_party/
+# The substrate under test is proprietary and never committed.
+src/probe/_substrate_impl.py
+
+# python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+
+# model weights / lens checkpoints - never commit
+*.pt
+*.safetensors
+hf_cache/
+
+# node (dev-only mermaid validation)
+node_modules/
+package.json
+package-lock.json

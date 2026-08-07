@@ -1,0 +1,579 @@
+{
+  "mile": 3,
+  "gate_passed": true,
+  "n_pairs": 32,
+  "n_passed": 31,
+  "factset_hash": "955b308bd5b146b7",
+  "block_size": 5,
+  "mechanism": "elapsed-time decay via the substrate ranker; direct priority boost inert (fresh memories share a ranking ceiling)",
+  "pilot_verdict": "MEDIATES_POSITION (10/10 slid within block)",
+  "per_pair": {
+    "country:Lyon->Osaka": {
+      "content_hash": "269c3bbc0bb59d57",
+      "order_hashes": {
+        "1": "80c63415810d3577",
+        "4": "7fd44b1c0b8d0a6e",
+        "5": "1174a57b5bd63d5d"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Munich->Shanghai": {
+      "content_hash": "899df9e8f2c76a0f",
+      "order_hashes": {
+        "1": "e9648a6cde68858f",
+        "4": "900ca9261271d669",
+        "5": "695a7f995f394678"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Milan->Barcelona": {
+      "content_hash": "345726c7237536e5",
+      "order_hashes": {
+        "1": "1ad1e6fb36ce5975",
+        "4": "c7ef28d15e489f92",
+        "5": "19ec67f4be697a03"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Alexandria->Mumbai": {
+      "content_hash": "a19a91d5b1babbb1",
+      "order_hashes": {
+        "1": "de8982681b8b26b8",
+        "4": "6e70a2bb69fddd58",
+        "5": "2ae9aebb9cd9ebfb"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Toronto->Guadalajara": {
+      "content_hash": "78fa92b949e9f7d5",
+      "order_hashes": {
+        "1": "4f2908d67508accc",
+        "4": "1a5b47e024354850",
+        "5": "0154feefb8c7594b"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Novosibirsk->Istanbul": {
+      "content_hash": "bc48fb4c6fc63cf6",
+      "order_hashes": {
+        "1": "748d0190efaeb913",
+        "4": "ca50126e753b8a3b",
+        "5": "05a656b40638a88c"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Gothenburg->Haifa": {
+      "content_hash": "f631f6d2ccea9016",
+      "order_hashes": {
+        "1": "8f68af9fef1faae3",
+        "4": "b0338e2c7e4f9cba",
+        "5": "f6f35039b4d887f7"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Isfahan->Basra": {
+      "content_hash": "12b211e0c66107a2",
+      "order_hashes": {
+        "1": "418001971717c9b9",
+        "4": "bee1a6b57d273b1c",
+        "5": "0f4a1b7329a5880e"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Kyoto->Recife": {
+      "content_hash": "b75e401b72ac09d0",
+      "order_hashes": {
+        "1": "f638832177b811d5",
+        "4": "9d14489a3b18b8b9",
+        "5": "f35ae05dd79d3d23"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Hamburg->Naples": {
+      "content_hash": "d5c7f876adeacac9",
+      "order_hashes": {
+        "1": "d51a6511d3c2ba8c",
+        "4": "50d126c7b179f263",
+        "5": "2008f96ef4c5cf25"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Seville->Vancouver": {
+      "content_hash": "8c02ec1280bb6586",
+      "order_hashes": {
+        "1": "35330c2e1117ac55",
+        "4": "2c59337e642af561",
+        "5": "09e08d6c37753fa9"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Chennai->Luxor": {
+      "content_hash": "561bd253cbadb580",
+      "order_hashes": {
+        "1": "b67d29f0f7f35e87",
+        "4": "38b32cf0f6f8c83c",
+        "5": "3dfc8e4683742666"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Shenzhen->Marseille": {
+      "content_hash": "5f04651984276148",
+      "order_hashes": {
+        "1": "402f8c731c796ca8",
+        "4": "81c511c69c47d83f",
+        "5": "6dc6ca033efb3ea8"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Izmir->Malmo": {
+      "content_hash": "45285a03431ac7d6",
+      "order_hashes": {
+        "1": "7a54ca6512b33efd",
+        "4": "45e69ee063feda8a",
+        "5": "b444d8ab6afcf1bc"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Monterrey->Kazan": {
+      "content_hash": "50e04104613390e2",
+      "order_hashes": {
+        "1": "c32f3769c235f134",
+        "4": "5ecf519cc5dfbed9",
+        "5": "001a48fadd9391a2"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Salvador->Shiraz": {
+      "content_hash": "75db82e7cb2daaab",
+      "order_hashes": {
+        "1": "5ca3751d5adca859",
+        "4": "67ca262a0f333b9d",
+        "5": "7ce08562ca148861"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Eilat->Mosul": {
+      "content_hash": "cde33d381eb4f339",
+      "order_hashes": {
+        "1": "85f5239f2e798759",
+        "4": "56098acbea43684e",
+        "5": "b1a010a5c61c8eb9"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Bordeaux->Cologne": {
+      "content_hash": "9005ef55932039ab",
+      "order_hashes": {
+        "1": "98c64f8005c52478",
+        "4": "f7828446a6a9b87b",
+        "5": "5ccf07fed29fc32c"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Turin->Nagoya": {
+      "content_hash": "3917bb7beabb1002",
+      "order_hashes": {
+        "1": "f86f9dc69cf3ec37",
+        "4": "482a18e5cb374fb2",
+        "5": "67ad6f2e9a9b4de5"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Valencia->Chengdu": {
+      "content_hash": "a044b313c42df35a",
+      "order_hashes": {
+        "1": "b4e52c3324411a13",
+        "4": "76c13373fd057e13",
+        "5": "598f5fd46c5ad1c7"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Bilbao->Sapporo": {
+      "content_hash": "c97b9954819b80e2",
+      "order_hashes": {
+        "1": "e5610ef0a0debe1d",
+        "4": "c0a03892824bf411",
+        "5": "940cd66f8329de56"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Cordoba->Guangzhou": {
+      "content_hash": "6023c9a5a3f10845",
+      "order_hashes": {
+        "1": "f52206e376b3451c",
+        "4": "4c7e8234da8a475a",
+        "5": "5929a3a29425edb4"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Genoa->Alexandria": {
+      "content_hash": "ac35964e97e1f477",
+      "order_hashes": {
+        "1": "8019898006e58bba",
+        "4": "14efaed718fa3cec",
+        "5": "24367bd738875429"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Rennes->Bangalore": {
+      "content_hash": "42ea6b73cfcf93a9",
+      "order_hashes": {
+        "1": "23cfd268ff1fafba",
+        "4": "f4f04eac5ef23936",
+        "5": "c4a578286679e233"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Dresden->Curitiba": {
+      "content_hash": "e45f11ea390614a0",
+      "order_hashes": {
+        "1": "f74de29fde4dd590",
+        "4": "52ef8057cdd3a54f",
+        "5": "febd327f0047acb6"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Uppsala->Tabriz": {
+      "content_hash": "bef84776033bf4f2",
+      "order_hashes": {
+        "1": "ffc97ce34c3d4652",
+        "4": "4c6740ca71ea2800",
+        "5": "de4a3904d2708513"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Nantes->Fortaleza": {
+      "content_hash": "b0e3d0497db5ad07",
+      "order_hashes": {
+        "1": "81b000692bb90df2",
+        "4": "12d711dc01dab4d3",
+        "5": "f223d1ac9dea2393"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Palermo->Hyderabad": {
+      "content_hash": "8af1c54f03d290c6",
+      "order_hashes": {
+        "1": "7ddb8b07b19dbac1",
+        "4": "b800377be5197bf1",
+        "5": "6349d1b5825d0942"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Malaga->Veracruz": {
+      "content_hash": "a393db51035fd8cc",
+      "order_hashes": {
+        "1": "cf9eb20accd86ad6",
+        "4": "a0a88b053bbee6e0",
+        "5": "671405916a17c28c"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Bremen->Nagoya": {
+      "content_hash": "bc519944e620cb97",
+      "order_hashes": {
+        "1": "4793abc9416474b2",
+        "4": "abd8bbb9477d289c",
+        "5": "5f6e9f1e909ee6c1"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    },
+    "country:Adana->Haifa": {
+      "content_hash": "1aea931d87a3ee0d",
+      "order_hashes": {
+        "1": "9d1b429be2bb5ab6",
+        "4": "46a1f1228208c566",
+        "5": "aafc75a8eb489137"
+      },
+      "dts": {
+        "1": 0,
+        "4": 10,
+        "5": 15
+      },
+      "target_utils": {
+        "1": 1.0,
+        "4": 0.8909,
+        "5": 0.8409
+      }
+    }
+  },
+  "failures": [
+    "country:Bursa->Yekaterinburg: 2/5 positions reachable ([1, 5]), need >=3 for a rank correlation."
+  ],
+  "band": [
+    20,
+    22
+  ],
+  "SUBSTRATE_VERSION": "substrate-mile1-frozen",
+  "git_sha": "ad11dbf"
+}

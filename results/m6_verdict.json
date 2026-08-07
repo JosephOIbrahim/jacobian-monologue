@@ -1,0 +1,27 @@
+{
+  "mile": 6,
+  "axis1": {
+    "n": 31,
+    "pos": 24,
+    "sign_p": 0.003326892852783203,
+    "median_delta": 0.5208326661082959,
+    "pass": false
+  },
+  "axis2": {
+    "n": 31,
+    "neg": 6,
+    "sign_p": 1.0,
+    "median_rho": 1.0,
+    "pass": false
+  },
+  "covert_fraction": 0.0064516129032258064,
+  "k4_pass": false,
+  "kill_criterion_fired": "K2",
+  "verdict": "the substrate's rebinding memory reliably shifts the model's verbalizable workspace toward the newly bound concept (Axis 1: 24/31 pairs positive, sign p=0.00333, median +0.52 nat), establishing that the substrate reaches J-space through the token stream at all; but the workspace does not track the substrate's utility ranking -- as decay demotes the target down the block, occupancy of the new concept rises rather than falls (Axis 2: median Spearman rho +1.00, opposite the predicted <-0.5), because a demoted memory sits textually nearer the question and recency, not ranked utility, drives promotion. K2 fires: the substrate's ordering has no positive promotion-gate consequence on Qwen3.5-4B, and the covert fraction (0.006 vs the 0.70 K4 bar) confirms the lens sees almost no workspace-held new binding at these layers that the model does not already commit to.",
+  "band": [
+    20,
+    22
+  ],
+  "model_id": "Qwen/Qwen3.5-4B",
+  "SUBSTRATE_VERSION": "substrate-mile1-frozen"
+}

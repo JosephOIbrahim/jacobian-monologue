@@ -1,0 +1,318 @@
+{
+  "decay_timescale": 60.0,
+  "lambda": 0.011552453009332421,
+  "dts": [
+    0.0,
+    30.0,
+    60.0,
+    120.0,
+    300.0
+  ],
+  "n": 10,
+  "moved": 10,
+  "dropped": 0,
+  "slid": 10,
+  "verdict": "MEDIATES_POSITION",
+  "rows": [
+    {
+      "key": "country:Lyon->Osaka",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Munich->Shanghai",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Milan->Barcelona",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Alexandria->Mumbai",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Toronto->Guadalajara",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Novosibirsk->Istanbul",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Gothenburg->Haifa",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Isfahan->Basra",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Kyoto->Recife",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    },
+    {
+      "key": "country:Hamburg->Naples",
+      "by_dt": {
+        "0.0": {
+          "pos": 1,
+          "in_top5": true,
+          "util": 1.0
+        },
+        "30.0": {
+          "pos": 3,
+          "in_top5": true,
+          "util": 0.7071
+        },
+        "60.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.5
+        },
+        "120.0": {
+          "pos": 4,
+          "in_top5": true,
+          "util": 0.25
+        },
+        "300.0": {
+          "pos": 5,
+          "in_top5": true,
+          "util": 0.0313
+        }
+      }
+    }
+  ]
+}
