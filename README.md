@@ -60,6 +60,7 @@ What's under the hood — and, just as important, what this does **not** claim.
 - **Delivery is honest** — a woken memory becomes plain text describing the *situation*, never the answer. An echo guard voids any run where the target concept leaks into the prompt. The model infers; it doesn't read a leaked answer.
 - **The measurement is a decision** — we read the model's forced choice at the single token where it commits. Configuration aligned → chosen action flips to the memory-implied one. One relation changed → it reverts to its prior. Large, reproducible.
 - **The counterfactual isolates the cause** — aligned and counterfactual differ by exactly one authored relationship. Everything else identical. So the decision change is attributable to *configuration*, not wording or recency.
+- **It holds across scenarios, not one lucky case** — the flip was reproduced across multiple distinct incidents (database latency, memory growth, incident response), each with its own counterintuitive memory, behind a pre-registered fairness gate. Where the base scenario wasn't genuinely ambiguous, that case was flagged and excluded rather than counted. See `results/m7_robustness.json`.
 
 ### What this proves
 A configuration composed in OpenUSD deterministically gates whether a memory reaches a language model, and that gating measurably changes the model's decision — flipping its chosen action — with a decisive one-relation counterfactual, demonstrated on knowledge that *contradicts* the model's prior.

@@ -1,0 +1,79 @@
+{
+  "experiment": "m7_robustness",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "n_scenarios": 4,
+  "fair_count": 3,
+  "flipped_of_fair": 3,
+  "robust": true,
+  "scenarios": [
+    {
+      "scenario": "payments_cache",
+      "fair": true,
+      "flipped": true,
+      "dormant": {
+        "A": 0.615,
+        "B": 0.094,
+        "C": 0.291
+      },
+      "woken": {
+        "A": 0.144,
+        "B": 0.646,
+        "C": 0.21
+      },
+      "implied": "B",
+      "implied_gain": 0.552
+    },
+    {
+      "scenario": "latency_index",
+      "fair": true,
+      "flipped": true,
+      "dormant": {
+        "A": 0.842,
+        "B": 0.029,
+        "C": 0.129
+      },
+      "woken": {
+        "A": 0.129,
+        "B": 0.742,
+        "C": 0.129
+      },
+      "implied": "B",
+      "implied_gain": 0.713
+    },
+    {
+      "scenario": "memory_growth_handler",
+      "fair": true,
+      "flipped": true,
+      "dormant": {
+        "A": 0.463,
+        "B": 0.219,
+        "C": 0.318
+      },
+      "woken": {
+        "A": 0.143,
+        "B": 0.821,
+        "C": 0.036
+      },
+      "implied": "B",
+      "implied_gain": 0.602
+    },
+    {
+      "scenario": "auth_failures_clock",
+      "fair": false,
+      "flipped": true,
+      "dormant": {
+        "A": 0.19,
+        "B": 0.455,
+        "C": 0.355
+      },
+      "woken": {
+        "A": 0.119,
+        "B": 0.685,
+        "C": 0.196
+      },
+      "implied": "B",
+      "implied_gain": 0.229
+    }
+  ],
+  "criterion": "across >=3 fair scenarios, memory flips argmax to implied action in every one"
+}
