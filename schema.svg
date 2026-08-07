@@ -1,1 +1,26 @@
-²ø0‰Ûa
+<svg width="100%" viewBox="0 0 680 620" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Space Grotesk, Segoe UI, sans-serif">
+<title>How a composed configuration wakes a memory</title>
+<desc>Three authored facts point to the same system. A predicate checks they agree and wakes a dormant memory, changing the model's decision. Flip one relation and the memory stays asleep.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="680" height="620" fill="#0f1117"/>
+<text x="40" y="34" fill="#e8e8ea" font-size="15" font-weight="500">Three authored facts</text>
+<text x="40" y="52" fill="#9a9aa2" font-size="12">Each written independently. None mentions the others.</text>
+<g><rect x="40" y="68" width="180" height="56" rx="8" fill="#16233a" stroke="#378add" stroke-width="0.5"/><text x="130" y="90" fill="#9cc4f0" font-size="14" font-weight="500" text-anchor="middle">Task</text><text x="130" y="108" fill="#6b93c4" font-size="12" text-anchor="middle">restore the payments system</text></g>
+<g><rect x="250" y="68" width="180" height="56" rx="8" fill="#16233a" stroke="#378add" stroke-width="0.5"/><text x="340" y="90" fill="#9cc4f0" font-size="14" font-weight="500" text-anchor="middle">Observation</text><text x="340" y="108" fill="#6b93c4" font-size="12" text-anchor="middle">payments is degraded</text></g>
+<g><rect x="460" y="68" width="180" height="56" rx="8" fill="#16233a" stroke="#378add" stroke-width="0.5"/><text x="550" y="90" fill="#9cc4f0" font-size="14" font-weight="500" text-anchor="middle">Evidence</text><text x="550" y="108" fill="#6b93c4" font-size="12" text-anchor="middle">a change hit payments</text></g>
+<line x1="130" y1="124" x2="130" y2="192" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="340" y1="124" x2="340" y2="192" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M550 124 L550 158 L344 158" fill="none" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="468" y="152" fill="#9a9aa2" font-size="12" text-anchor="middle">all name the same system</text>
+<g><rect x="220" y="192" width="240" height="56" rx="8" fill="#241a3a" stroke="#7f77dd" stroke-width="0.5"/><text x="340" y="214" fill="#b3aef0" font-size="14" font-weight="500" text-anchor="middle">Predicate</text><text x="340" y="232" fill="#8983c4" font-size="12" text-anchor="middle">do the facts form a situation?</text></g>
+<line x1="340" y1="248" x2="340" y2="304" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="404" y="280" fill="#5dcaa5" font-size="12" text-anchor="middle">yes, wake</text>
+<g><rect x="200" y="304" width="280" height="56" rx="8" fill="#0f2b24" stroke="#1d9e75" stroke-width="0.5"/><text x="340" y="326" fill="#7fd9bc" font-size="14" font-weight="500" text-anchor="middle">Dormant memory wakes</text><text x="340" y="344" fill="#4f9f86" font-size="12" text-anchor="middle">a past incident, now relevant</text></g>
+<line x1="340" y1="360" x2="340" y2="416" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g><rect x="200" y="416" width="280" height="56" rx="8" fill="#0f2b24" stroke="#1d9e75" stroke-width="0.5"/><text x="340" y="438" fill="#7fd9bc" font-size="14" font-weight="500" text-anchor="middle">The model's decision changes</text><text x="340" y="456" fill="#4f9f86" font-size="12" text-anchor="middle">it acts on what it was shown</text></g>
+<line x1="40" y1="504" x2="640" y2="504" stroke="#2a2d38" stroke-width="0.5"/>
+<text x="40" y="532" fill="#e8e8ea" font-size="15" font-weight="500">The counterfactual</text>
+<g><rect x="40" y="548" width="290" height="56" rx="8" fill="#3a2c12" stroke="#ba7517" stroke-width="0.5"/><text x="185" y="570" fill="#f0c477" font-size="14" font-weight="500" text-anchor="middle">Flip one relation</text><text x="185" y="588" fill="#c49a4f" font-size="12" text-anchor="middle">evidence now names a different system</text></g>
+<line x1="330" y1="576" x2="378" y2="576" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
+<g><rect x="388" y="548" width="252" height="56" rx="8" fill="#20222a" stroke="#5f5e5a" stroke-width="0.5"/><text x="514" y="570" fill="#b4b2a9" font-size="14" font-weight="500" text-anchor="middle">Memory stays asleep</text><text x="514" y="588" fill="#88877f" font-size="12" text-anchor="middle">same prompt, different answer</text></g>
+</svg>
