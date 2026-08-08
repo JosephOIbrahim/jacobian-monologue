@@ -80,7 +80,10 @@ But here it holds *cognitive state* instead of geometry.
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/schema.svg" alt="How a composed configuration wakes a memory: three authored facts point at the same system, a predicate checks they agree and wakes a dormant memory, which changes the model's decision. Flip one relation and the memory stays asleep." width="680">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/schema-social-dark.svg">
+    <img src="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/schema-social.svg" alt="How a composed configuration wakes a memory: three authored facts converge, a predicate checks they form a situation and wakes a dormant memory, and the model's decision flips from 9% to 65%. Flip one relation and the memory stays asleep - it reverts again at 61%." width="680">
+  </picture>
 </p>
 
 <br>
@@ -328,6 +331,8 @@ results/*.json        the record. every run carries its own full config.
 results/m7_aprime.json    the end-to-end USD-gated run (predicate_woke per condition)
 results/figure.png    the one plot
 schema.svg            the codeless diagram of the USD wake mechanism
+schema-social.svg     the same diagram, designed for daylight (the README serves this)
+schema-social-dark.svg   its dark twin, served to dark-mode readers
 WRITEUP.md            the full engineering writeup
 ```
 

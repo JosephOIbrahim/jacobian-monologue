@@ -1,7 +1,8 @@
 # Social posts — final, as posted (2026-08-08)
 
 Attach the schema image to both — it carries the 9% → 65% result for anyone
-who never taps the link. (PNG export: render `schema.svg` at ~1360px.)
+who never taps the link. (PNG export: render `schema-social.svg` — or its
+dark twin `schema-social-dark.svg` — at ~1360px or wider.)
 
 ---
 
