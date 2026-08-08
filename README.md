@@ -329,7 +329,7 @@ If you reference this experiment, please cite it. A machine-readable [`CITATION.
 
 ```
 Ibrahim, J. O. (2026). Jacobian Monologue: Configuration-Gated Memory
-Delivery to a Language Model (v0.1.0). https://github.com/JosephOIbrahim/jacobian-monologue
+Delivery to a Language Model (v0.1.1). https://github.com/JosephOIbrahim/jacobian-monologue
 ```
 
 <br>
