@@ -20,3 +20,5 @@ hf_cache/
 node_modules/
 package.json
 package-lock.json
+
+RELEASE_NOTES_*.md
