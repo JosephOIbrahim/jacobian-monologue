@@ -145,14 +145,14 @@ actually the same prompt five times.
 Each mile is one Claude Code session. Hit the gate, write the JSON, stop.
 
 ### Mile 1 — Instrument
-*No the substrate. No Mile 2 code.*
+*No substrate. No Mile 2 code.*
 
 Install jlens as a dependency (Apache-2.0, github.com/anthropics/jacobian-lens). Load Qwen3.5-4B bf16 + `neuronpedia/jacobian-lens` revision `qwen-n1000`. Run the repo's known-answer example. Sweep all layers, determine `BAND`.
 
 **Gate:** known-answer token in lens top-5 across a contiguous band of >=6 layers. `results/m1_instrument.json` records `BAND`, per-layer recall, wall-clock per prefill, and native-Windows vs WSL2.
 
 ### Mile 2 — Exclusions
-*Still no the substrate.*
+*Still no substrate.*
 
 Build `exclusions.py` and its pytest suite. Echo exclusion on synthetic positive and negative cases. Mouth exclusion with the covert-hit definition above, validated against a hand-labelled set of 10 prompts where you know the answer is or is not about to be said.
 
@@ -179,6 +179,26 @@ Three, all required:
 
 **Gate:** `results/m5_controls.json`. Control 3 flat within noise.
 
+> **DEVIATION, RECORDED 2026-08-08.** Mile 5 was pre-registered here and was
+> NOT executed before the verdict. K2's firing condition was already
+> unambiguous in the Mile 4 data (median rho +1.00 against a predicted
+> < -0.5), and the K2 protocol -- ship the negative and stop -- was followed
+> directly from Mile 4 to Mile 6. Consequence for reading the record: the
+> recency mechanism named in the Mile 6 verdict is an interpretation
+> consistent with the data, not a demonstrated control result. Control 3
+> (the position-only null) was subsequently executed post hoc, labelled as
+> such, to test whether that interpretation survives:
+> `experiments/m5_controls/control3_posthoc.py` ->
+> `results/m5_control3_posthoc.json`. Controls 1 and 2 remain unexecuted.
+>
+> **OUTCOME (post hoc, 2026-08-08): FLAT.** With no target present, R shows
+> no reliable position structure (median rho +0.20, both sign tests ns;
+> median per-pair R-range 0.208 nat vs 0.490 nat in Mile 4 Axis 2, measured
+> over MORE positions -- 5 vs 3 -- so the comparison is conservative). The
+> block geometry alone does not drive the metric. The Axis 2 inversion
+> required the target's content, and the recency interpretation survives
+> the control it should have faced before the verdict.
+
 ### Mile 6 — Verdict
 Apply the kill criteria. One matplotlib figure: `R` vs position, error bars across fact pairs, Axis 1 delta as a horizontal reference band. Verdict paragraph — three sentences, no hedging.
 
@@ -198,7 +218,7 @@ Decided before Mile 4 runs. Not adjustable afterward.
 
 ## KILL CRITERIA
 
-**FROZEN at Mile 3 close (git tag mile-3, commit recorded in results/m3_factset.json). Do not edit, soften, or add exceptions.**
+**FROZEN at Mile 3 close (tagged `mile-3` in the private research repo; the run's commit SHA is recorded in results/m3_factset.json). Do not edit, soften, or add exceptions.**
 
 Mile 3 also established two hard facts about the instrument, recorded before the freeze:
 - **Axis 2 mechanism is elapsed decay, not direct priority boost** (fresh memories share a ranking ceiling; the boost lever is inert).

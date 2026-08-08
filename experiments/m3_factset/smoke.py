@@ -19,7 +19,7 @@ print(f"pair: {p.key}\n")
 conds, diag = build_conditions(tok, embed, p)
 print("positions reached :", diag["positions_reached"] and sorted(set(diag["positions_reached"])))
 print("positions missing :", diag["positions_missing"])
-print("weights used      :", diag["weights_used"])
+print("decay ages used   :", diag["dts_used"])
 print()
 
 for pos in sorted(conds):

@@ -52,6 +52,8 @@ Here's what's actually happening under the hood, and — just as importantly —
 
 **The counterfactual isolates the cause.** Aligned and counterfactual conditions differ by exactly one authored relationship. Everything else — prompt, options, memory content, length — is identical. So the change in the model's decision can be attributed to the configuration, not to wording, recency, or context length.
 
+**Two artifacts carry the claim.** The end-to-end run — predicate evaluated on the composed USD stage, `predicate_woke` recorded per condition — is `results/m7_aprime.json`. The robustness suite (`results/m7_robustness.json`) then re-tests the delivery→decision half across scenarios without re-running the predicate, which is deterministic over the authored stage. The gate is proven once end-to-end; the flip is proven repeatedly.
+
 ### What this proves
 
 A configuration composed in OpenUSD deterministically gates whether a memory reaches a language model, and that gating measurably changes the model's decision — flipping its chosen action — with a decisive one-relation counterfactual. The effect is demonstrated on knowledge that *contradicts* the model's prior, so the memory's influence is unambiguous rather than a restatement of what the model already believed.
@@ -70,4 +72,4 @@ That's a small result on a small world-model — three facts. But it is qualitat
 
 ---
 
-*Reproducible end to end. The memory substrate under test is proprietary; everything measuring it — the composition, the predicate, the echo guard, the decision probe — is here, and it runs against any substrate exposing the same simple contract.*
+*Reproducible end to end, with nothing missing: this experiment — the composition, the predicate, the echo guard, the decision probe — is complete in this repository and requires no proprietary component. The proprietary memory substrate belongs to the companion m1–m6 probe, where it is measured strictly through a three-operation ranker contract (`src/probe/substrate.py`) that any implementation can satisfy.*

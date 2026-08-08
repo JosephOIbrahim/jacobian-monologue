@@ -76,7 +76,9 @@ python scripts/verify.py
 
 ## ✅ You're good when
 
-`verify.py` prints **7 green PASS lines** and `all 7 checks passed`. That's the render preview coming up clean. Everything downstream will work.
+`verify.py` prints a board of green `[PASS]` lines and **no red `[FAIL]`**. That's the render preview coming up clean.
+
+One line may say `[SKIP] substrate ranker` — that's normal if you don't have the proprietary substrate. It's like a missing optional plugin: the scene still opens. You only need a ranker (yours or the substrate) for the m1–m4 experiments; **the m7 headline runs without it.**
 
 ---
 
@@ -88,8 +90,8 @@ Nothing here is fatal. Match your symptom:
 |---|---|---|
 | `torch ... +cpu` in the checks | you got the laptop-graphics version | redo step 2, keep the `--index-url` |
 | `CUDA not available` | GPU isn't being seen | check your NVIDIA drivers are current |
-| `No substrate ranker available` | step 5 didn't point at the right folder | fix the path in step 5 |
-| substrate ranker check fails | no ranker is installed | expected if you don't have the proprietary substrate — supply your own ranker (see `src/probe/substrate.py`) |
+| `[SKIP] substrate ranker` | no ranker installed | expected without the proprietary substrate; not needed for m7. For m1–m4, do step 5 or supply your own ranker (see `src/probe/substrate.py`) |
+| substrate check shows red `[FAIL]` | a ranker IS installed but broke the contract | fix the path in step 5, or fix your ranker's `rank_block()` |
 | `python: command not found` | try `python3` instead | some machines name it that |
 
 **The universal reset:** delete the `.venv` folder and start again from step 1. Costs you one coffee's worth of download. You genuinely cannot corrupt anything else.

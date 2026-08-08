@@ -1,20 +1,23 @@
 [project]
-name = "internal-monologue"
-version = "0.1.0"
-description = "J-space x substrate probe. Experiment repo."
+name = "jacobian-monologue"
+version = "0.1.1"
+description = "Configuration-gated memory delivery to a language model. Measurement instrument."
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "transformers>=5.5",
     "torch",
     "matplotlib",
-    "pytest",
 ]
 
-# the substrate is installed editable from a sibling checkout (default <path-to-substrate>;
-# override via SUBSTRATE_REPO env var). See README. Not vendored -- it is the instrument.
-# PINNED SHA AT EXPERIMENT START: substrate-mile1-frozen
-# If the substrate moves off this SHA mid-experiment, every prior result is void.
-# The SHA is re-recorded in every results/*.json. Verify before each mile.
+[dependency-groups]
+dev = ["pytest"]
+
+# The proprietary substrate under test is NOT a dependency of this package.
+# For m1-m4 it (or a user-supplied ranker) is installed editable from a
+# separate checkout: `uv pip install -e /path/to/substrate`. See README.
+# The build identifier pinned at experiment start is recorded in
+# src/probe/pins.py (SUBSTRATE_VERSION) and embedded in every results/*.json.
+# If the substrate moves off that pin mid-experiment, prior results are void.
 
 [build-system]
 requires = ["hatchling"]

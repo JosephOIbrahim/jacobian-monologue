@@ -1,8 +1,8 @@
 """Zero-dependency progress bar. stdlib only.
 
 tqdm is present transitively (huggingface-hub pulls it) but is NOT a declared
-dependency of this project -- see CLAUDE.md rule 3. Use this instead so the
-probe does not silently break if that transitive drops.
+dependency of this project. Use this instead so the probe does not silently
+break if that transitive drops.
 
 Two entry points:
 

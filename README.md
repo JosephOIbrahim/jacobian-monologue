@@ -159,6 +159,12 @@ Aligned and counterfactual differ by exactly one authored relationship. Everythi
 
 The flip reproduced across multiple distinct incidents — database latency, memory growth, incident response — each with its own counterintuitive memory, behind a pre-registered fairness gate. Where a base scenario wasn't genuinely ambiguous, that case was flagged and excluded rather than counted. See [`results/m7_robustness.json`](results/m7_robustness.json).
 
+<br>
+
+**Two artifacts, two halves of the claim**
+
+[`results/m7_aprime.json`](results/m7_aprime.json) is the end-to-end run: the predicate is evaluated on the composed USD stage and `predicate_woke` is recorded per condition — that file is the evidence that USD gating, not a hand-set flag, controlled delivery. The robustness suite then re-tests the delivery→flip half across scenarios without re-running the predicate, which is deterministic over the authored stage. Gate proven once end-to-end; flip proven repeatedly.
+
 ---
 
 <br>
@@ -245,7 +251,7 @@ The numbers, if you want them:
 
 | Test | Predicted | Measured | Verdict |
 |---|---|---|---|
-| Memory moves workspace | positive | **+0.52 nat, 24/31, p=0.003** | ✅ real, smaller than hoped |
+| Memory moves workspace | positive | **+0.52 nat, 24/31, p=0.003** | ✅ direction confirmed; pre-registered magnitude bar (>1.0 nat) not met |
 | Ranking drives it | ρ < −0.5 | **ρ = +1.0** (inverted) | ❌ recency won |
 | Lens sees hidden thought | ≥ 0.70 | **0.006** | ❌ near-invisible here |
 
@@ -262,6 +268,8 @@ Every decision was **locked before the data came in** — so nothing could be qu
 When a "kill criterion" fires, you stop and report it. You don't explain it away.
 
 **K2 fired. This README reports it.**
+
+One deviation is on the record too: a pre-registered control mile (m5) was not run before the verdict — the K2 protocol (ship the negative, stop) was followed straight from the sweep. That gap is documented in [`BLUEPRINT.md`](BLUEPRINT.md), and the key control — a position-only null, no target anywhere in the block — was executed afterward, clearly labelled post-hoc. It came back flat: block geometry alone doesn't move the metric, so the recency reading stands on a control, not just an interpretation. See [`results/m5_control3_posthoc.json`](results/m5_control3_posthoc.json).
 
 That discipline is the difference between a finding and a story.
 
@@ -280,8 +288,10 @@ src/probe/            the instrument
   substrate.py        the ranker interface (the proprietary substrate is not vendored)
 scripts/verify.py     7-check gate — run before anything
 experiments/mN_*/     one folder per stage, each with its diagnostics
+experiments/m5_controls/  the position-only null (run post-hoc; labelled as such)
 experiments/m7_usd_wake/  the USD wake experiment (the headline result)
 results/*.json        the record. every run carries its own full config.
+results/m7_aprime.json    the end-to-end USD-gated run (predicate_woke per condition)
 results/figure.png    the one plot
 schema.svg            the codeless diagram of the USD wake mechanism
 WRITEUP.md            the full engineering writeup
@@ -302,12 +312,12 @@ uv venv --python 3.12
 uv pip install torch --index-url https://download.pytorch.org/whl/cu128
 uv pip install "jlens @ git+https://github.com/anthropics/jacobian-lens"
 uv pip install -e .
-python scripts/verify.py     # 7 green checks = you're good
+python scripts/verify.py     # a green board = you're good
 ```
 
-Needs a CUDA GPU and a checkout of the substrate being tested.
+The substrate check reports `SKIP` if the proprietary substrate isn't installed — that's expected and fine. It's only needed for the m1–m4 ranking probe; **the m7 headline experiment never touches it.** To run m1–m4 without the substrate, supply your own ranker — the interface is in `src/probe/substrate.py`.
 
-Don't have it? Supply your own ranker — the interface is in `src/probe/substrate.py`.
+Needs a CUDA GPU.
 
 ---
 

@@ -18,8 +18,8 @@ authors:
   - family-names: Ibrahim
     given-names: Joseph O.
     orcid: "https://orcid.org/0009-0009-2689-4966"
-version: 0.1.0
-date-released: "2026-08-07"
+version: 0.1.1
+date-released: "2026-08-08"
 url: "https://github.com/JosephOIbrahim/jacobian-monologue"
 repository-code: "https://github.com/JosephOIbrahim/jacobian-monologue"
 keywords:

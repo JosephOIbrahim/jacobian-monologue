@@ -1,0 +1,343 @@
+{
+  "experiment": "m5_control3_position_only_null",
+  "post_hoc": true,
+  "run_date": "2026-08-08",
+  "provenance": "pre-registered in BLUEPRINT Mile 5; executed after the Mile 6 verdict as a robustness check, not as the pre-registered control",
+  "criterion": "FLAT iff |median rho|<0.5 and both sign tests ns at 0.01",
+  "n_pairs": 32,
+  "median_rho": 0.2,
+  "sign_p_rho_neg": 1.0,
+  "sign_p_rho_pos": 0.37708558747544885,
+  "median_R_range": 0.20833336236574232,
+  "m4_axis2_median_R_range": 0.4895825706417024,
+  "flat": true,
+  "verdict": "FLAT: with no target present, R shows no reliable position structure (median rho +0.20; sign tests ns; median per-pair range 0.208 nat vs Mile 4 Axis 2 0.490 nat). The block geometry alone does not drive the metric; the Axis 2 inversion required the target's content, consistent with the recency interpretation.",
+  "per_pair": {
+    "country:Lyon->Osaka": {
+      "R": {
+        "1": -0.4167,
+        "2": -0.5208,
+        "3": -0.4792,
+        "4": -0.5208,
+        "5": -0.4375
+      },
+      "rho": -0.1
+    },
+    "country:Munich->Shanghai": {
+      "R": {
+        "1": -0.9375,
+        "2": -1.1042,
+        "3": -1.0833,
+        "4": -1.0625,
+        "5": -1.0625
+      },
+      "rho": 0.0
+    },
+    "country:Milan->Barcelona": {
+      "R": {
+        "1": -0.5833,
+        "2": -0.6458,
+        "3": -0.6458,
+        "4": -0.625,
+        "5": -0.5625
+      },
+      "rho": 0.4
+    },
+    "country:Alexandria->Mumbai": {
+      "R": {
+        "1": 2.2708,
+        "2": 2.2708,
+        "3": 2.3333,
+        "4": 2.3958,
+        "5": 2.5208
+      },
+      "rho": 0.9
+    },
+    "country:Toronto->Guadalajara": {
+      "R": {
+        "1": -2.9792,
+        "2": -3.1875,
+        "3": -3.1875,
+        "4": -3.25,
+        "5": -3.375
+      },
+      "rho": -1.0
+    },
+    "country:Novosibirsk->Istanbul": {
+      "R": {
+        "1": -2.1771,
+        "2": -2.1771,
+        "3": -2.2396,
+        "4": -2.25,
+        "5": -2.2917
+      },
+      "rho": -0.9
+    },
+    "country:Gothenburg->Haifa": {
+      "R": {
+        "1": -1.7708,
+        "2": -1.75,
+        "3": -1.7708,
+        "4": -1.7917,
+        "5": -1.625
+      },
+      "rho": 0.3
+    },
+    "country:Isfahan->Basra": {
+      "R": {
+        "1": -0.9896,
+        "2": -0.7604,
+        "3": -0.8854,
+        "4": -0.8646,
+        "5": -0.8229
+      },
+      "rho": 0.4
+    },
+    "country:Kyoto->Recife": {
+      "R": {
+        "1": -1.5,
+        "2": -1.5208,
+        "3": -1.6042,
+        "4": -1.625,
+        "5": -1.7292
+      },
+      "rho": -1.0
+    },
+    "country:Hamburg->Naples": {
+      "R": {
+        "1": -1.375,
+        "2": -1.4167,
+        "3": -1.5,
+        "4": -1.4792,
+        "5": -1.6458
+      },
+      "rho": -0.9
+    },
+    "country:Seville->Vancouver": {
+      "R": {
+        "1": 2.1667,
+        "2": 2.2917,
+        "3": 2.3333,
+        "4": 2.3333,
+        "5": 2.5833
+      },
+      "rho": 0.9
+    },
+    "country:Chennai->Luxor": {
+      "R": {
+        "1": -2.2708,
+        "2": -2.2708,
+        "3": -2.3333,
+        "4": -2.3958,
+        "5": -2.5208
+      },
+      "rho": -0.9
+    },
+    "country:Shenzhen->Marseille": {
+      "R": {
+        "1": 0.2917,
+        "2": 0.5,
+        "3": 0.4792,
+        "4": 0.5,
+        "5": 0.4375
+      },
+      "rho": 0.1
+    },
+    "country:Izmir->Malmo": {
+      "R": {
+        "1": 2.0729,
+        "2": 2.1146,
+        "3": 2.1562,
+        "4": 2.1875,
+        "5": 2.1458
+      },
+      "rho": 0.7
+    },
+    "country:Monterrey->Kazan": {
+      "R": {
+        "1": 0.875,
+        "2": 1.0625,
+        "3": 1.0833,
+        "4": 1.125,
+        "5": 1.0417
+      },
+      "rho": 0.4
+    },
+    "country:Salvador->Shiraz": {
+      "R": {
+        "1": -0.8958,
+        "2": -0.9792,
+        "3": -0.9792,
+        "4": -0.9583,
+        "5": -1.0
+      },
+      "rho": -0.6
+    },
+    "country:Eilat->Mosul": {
+      "R": {
+        "1": -0.6771,
+        "2": -0.6771,
+        "3": -0.7813,
+        "4": -0.7812,
+        "5": -0.8854
+      },
+      "rho": -0.8
+    },
+    "country:Bordeaux->Cologne": {
+      "R": {
+        "1": 0.6458,
+        "2": 0.6042,
+        "3": 0.6042,
+        "4": 0.5625,
+        "5": 0.625
+      },
+      "rho": -0.3
+    },
+    "country:Turin->Nagoya": {
+      "R": {
+        "1": 0.3125,
+        "2": 0.2917,
+        "3": 0.4167,
+        "4": 0.3958,
+        "5": 0.5833
+      },
+      "rho": 0.8
+    },
+    "country:Valencia->Chengdu": {
+      "R": {
+        "1": 1.0208,
+        "2": 0.9583,
+        "3": 1.0625,
+        "4": 1.0417,
+        "5": 1.1458
+      },
+      "rho": 0.8
+    },
+    "country:Bilbao->Sapporo": {
+      "R": {
+        "1": 0.8958,
+        "2": 0.9375,
+        "3": 1.0625,
+        "4": 1.0208,
+        "5": 1.1458
+      },
+      "rho": 0.9
+    },
+    "country:Cordoba->Guangzhou": {
+      "R": {
+        "1": 1.0208,
+        "2": 0.9583,
+        "3": 1.0625,
+        "4": 1.0417,
+        "5": 1.1458
+      },
+      "rho": 0.8
+    },
+    "country:Genoa->Alexandria": {
+      "R": {
+        "1": -1.6458,
+        "2": -1.5625,
+        "3": -1.625,
+        "4": -1.625,
+        "5": -1.5833
+      },
+      "rho": 0.4
+    },
+    "country:Rennes->Bangalore": {
+      "R": {
+        "1": -0.1042,
+        "2": -0.1042,
+        "3": -0.1875,
+        "4": -0.1458,
+        "5": -0.0833
+      },
+      "rho": 0.1
+    },
+    "country:Dresden->Curitiba": {
+      "R": {
+        "1": -2.5625,
+        "2": -2.6458,
+        "3": -2.6875,
+        "4": -2.7083,
+        "5": -2.7917
+      },
+      "rho": -1.0
+    },
+    "country:Bursa->Yekaterinburg": {
+      "R": {
+        "1": 2.1771,
+        "2": 2.1771,
+        "3": 2.2396,
+        "4": 2.25,
+        "5": 2.2917
+      },
+      "rho": 0.9
+    },
+    "country:Uppsala->Tabriz": {
+      "R": {
+        "1": -1.4583,
+        "2": -1.6667,
+        "3": -1.6667,
+        "4": -1.7083,
+        "5": -1.6875
+      },
+      "rho": -0.8
+    },
+    "country:Nantes->Fortaleza": {
+      "R": {
+        "1": -1.9167,
+        "2": -2.0417,
+        "3": -2.0833,
+        "4": -2.1458,
+        "5": -2.1667
+      },
+      "rho": -1.0
+    },
+    "country:Palermo->Hyderabad": {
+      "R": {
+        "1": 0.625,
+        "2": 0.7083,
+        "3": 0.7083,
+        "4": 0.7708,
+        "5": 0.9375
+      },
+      "rho": 1.0
+    },
+    "country:Malaga->Veracruz": {
+      "R": {
+        "1": -0.8125,
+        "2": -0.8958,
+        "3": -0.8542,
+        "4": -0.9167,
+        "5": -0.7917
+      },
+      "rho": 0.1
+    },
+    "country:Bremen->Nagoya": {
+      "R": {
+        "1": -1.0625,
+        "2": -1.125,
+        "3": -1.0833,
+        "4": -1.0833,
+        "5": -1.0625
+      },
+      "rho": 0.3
+    },
+    "country:Adana->Haifa": {
+      "R": {
+        "1": 0.3021,
+        "2": 0.3646,
+        "3": 0.3854,
+        "4": 0.3958,
+        "5": 0.5208
+      },
+      "rho": 1.0
+    }
+  },
+  "echo_voids": [],
+  "band": [
+    20,
+    22
+  ],
+  "model_id": "Qwen/Qwen3.5-4B"
+}

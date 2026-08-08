@@ -6,8 +6,9 @@ memory. This module IS that seam. USD 26.08 holds the world-model as a non-3D
 data layer (custom attrs + relations, zero geometry); resolve_wake() evaluates
 the predicate over the composed stage and returns wake/dormant.
 
-Nothing here reaches J-space. It decides WHETHER a memory is delivered. The
-delivery adapter (separate module) turns a woken memory into prompt tokens.
+Nothing here reaches J-space. It decides WHETHER a memory is delivered.
+Delivery -- turning a woken memory into echo-guarded prompt text -- happens in
+run_aprime.py (build_prompt), the decision-probe experiment this module feeds.
 """
 from __future__ import annotations
 from dataclasses import dataclass

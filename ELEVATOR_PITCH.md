@@ -28,7 +28,7 @@ The second half is a **negative result**, and it's the valuable one. It's honest
 
 ## 🍷 One glass, for someone technical
 
-Anthropic's July 2026 workspace paper introduced the Jacobian lens — a cheap, weight-grounded readout of the concepts a model is *disposed to verbalize*, its "J-space." I paired it with the substrate, my memory substrate, to test one claim: **does the substrate's utility ranking predict workspace occupancy of a bound concept, at fixed context content?**
+Anthropic's July 2026 workspace paper introduced the Jacobian lens — a cheap, weight-grounded readout of the concepts a model is *disposed to verbalize*, its "J-space." I paired it with my memory substrate to test one claim: **does the substrate's utility ranking predict workspace occupancy of a bound concept, at fixed context content?**
 
 Design: 31 entity-rebinding pairs ("the office moved from Lyon to Osaka" → "which country?"), targets never appearing in-context so a lens hit is a readout, not an echo. Two axes — presence (manipulation check) and order-at-fixed-content (the claim). Kill criteria and statistics frozen before the sweep.
 
@@ -36,6 +36,6 @@ Design: 31 entity-rebinding pairs ("the office moved from Lyon to Osaka" → "wh
 
 **Axis 2 inverted:** predicted Spearman ρ < −0.5, measured **+1.0**. The confound was clean and instructive — decaying a memory down the substrate's ranking placed it textually nearer the probe, and recency drove promotion instead of utility. **K2 fired.**
 
-Two bonus facts about the substrate itself, surfaced by the instrument: its a direct priority boost cannot raise a fresh memory (fresh memories share a ranking ceiling), and its decay ranking resolves ~3 distinct positions, not 5, when candidates are similar. Both are now in the record, both contradict the naive framing, and I'd rather learn that from my own probe than from a reviewer.
+Two bonus facts about the substrate itself, surfaced by the instrument: a direct priority boost cannot raise a fresh memory (fresh memories share a ranking ceiling), and its decay ranking resolves ~3 distinct positions, not 5, when candidates are similar. Both are now in the record, both contradict the naive framing, and I'd rather learn that from my own probe than from a reviewer.
 
 n=31, one model, one layer band, single-token targets. It doesn't prove ranking is inert in general — it proves *this instrument couldn't see a positive effect and recency was strong enough to invert the sign.* The follow-up that kills the confound is specified and waiting.

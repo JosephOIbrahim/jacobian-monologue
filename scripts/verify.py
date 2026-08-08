@@ -15,16 +15,22 @@ from __future__ import annotations
 import subprocess
 import sys
 
-_results: list[tuple[bool, str, str]] = []
+_results: list[tuple[str, str, str]] = []  # (status, name, detail); status in PASS/FAIL/SKIP
+
+
+class Skip(Exception):
+    """Check not applicable in this environment. Reported, never a failure."""
 
 
 def check(name: str):
     def deco(fn):
         try:
             detail = fn()
-            _results.append((True, name, detail))
+            _results.append(("PASS", name, detail))
+        except Skip as skip:
+            _results.append(("SKIP", name, str(skip)))
         except Exception as exc:  # noqa: BLE001 - the report IS the handling
-            _results.append((False, name, f"{type(exc).__name__}: {exc}"))
+            _results.append(("FAIL", name, f"{type(exc).__name__}: {exc}"))
         return fn
 
     return deco
@@ -100,7 +106,16 @@ def _substrate() -> str:
     """
     from probe.substrate import SubstrateRanker
 
-    ranker = SubstrateRanker.default()
+    try:
+        ranker = SubstrateRanker.default()
+    except RuntimeError as exc:
+        # The proprietary substrate is not installed. That is the expected
+        # state for external reproducers: m1-m4 need a ranker (supply your
+        # own -- see probe/substrate.py); the m7 experiments never use one.
+        raise Skip(
+            "substrate not installed -- supply your own ranker for m1-m4; "
+            "not needed for m7"
+        ) from exc
     order, standing = ranker.rank_block(
         ["a", "b"], [[1.0, 0.0], [0.0, 1.0]], [1.0, 0.0],
         aged_index=0, age_seconds=0.0,
@@ -126,18 +141,18 @@ def _probe() -> str:
 
 def main() -> int:
     width = max(len(n) for _, n, _ in _results)
-    failed = 0
+    failed = sum(1 for s, _, _ in _results if s == "FAIL")
+    skipped = sum(1 for s, _, _ in _results if s == "SKIP")
     print()
-    for ok, name, detail in _results:
-        tag = "PASS" if ok else "FAIL"
-        if not ok:
-            failed += 1
-        print(f"  [{tag}] {name:<{width}}  {detail}")
+    for status, name, detail in _results:
+        print(f"  [{status}] {name:<{width}}  {detail}")
     print()
     if failed:
         print(f"  {failed} check(s) FAILED -- do not start the mile.\n")
         return 1
-    print(f"  all {len(_results)} checks passed -- environment attributable.\n")
+    passed = len(_results) - skipped
+    note = f" ({skipped} skipped -- fine unless you are running m1-m4)" if skipped else ""
+    print(f"  {passed}/{len(_results)} checks passed, none failed -- environment attributable.{note}\n")
     return 0
 
 
