@@ -17,10 +17,12 @@
 <text x="404" y="280" fill="#5dcaa5" font-size="12" text-anchor="middle">yes, wake</text>
 <g><rect x="200" y="304" width="280" height="56" rx="8" fill="#0f2b24" stroke="#1d9e75" stroke-width="0.5"/><text x="340" y="326" fill="#7fd9bc" font-size="14" font-weight="500" text-anchor="middle">Dormant memory wakes</text><text x="340" y="344" fill="#4f9f86" font-size="12" text-anchor="middle">a past incident, now relevant</text></g>
 <line x1="340" y1="360" x2="340" y2="416" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
-<g><rect x="200" y="416" width="280" height="56" rx="8" fill="#0f2b24" stroke="#1d9e75" stroke-width="0.5"/><text x="340" y="438" fill="#7fd9bc" font-size="14" font-weight="500" text-anchor="middle">The model's decision changes</text><text x="340" y="456" fill="#4f9f86" font-size="12" text-anchor="middle">it acts on what it was shown</text></g>
+<g><rect x="200" y="416" width="280" height="56" rx="8" fill="#0f2b24" stroke="#1d9e75" stroke-width="0.5"/><text x="340" y="438" fill="#7fd9bc" font-size="14" font-weight="500" text-anchor="middle">The model's decision changes</text><text x="340" y="456" fill="#4f9f86" font-size="12" text-anchor="middle">picks the cache fix instead of revert</text></g>
+<text x="560" y="438" fill="#5dcaa5" font-size="16" font-weight="600" text-anchor="middle">9% → 65%</text>
+<text x="560" y="456" fill="#4f9f86" font-size="11" text-anchor="middle">P(cache fix)</text>
 <line x1="40" y1="504" x2="640" y2="504" stroke="#2a2d38" stroke-width="0.5"/>
 <text x="40" y="532" fill="#e8e8ea" font-size="15" font-weight="500">The counterfactual</text>
 <g><rect x="40" y="548" width="290" height="56" rx="8" fill="#3a2c12" stroke="#ba7517" stroke-width="0.5"/><text x="185" y="570" fill="#f0c477" font-size="14" font-weight="500" text-anchor="middle">Flip one relation</text><text x="185" y="588" fill="#c49a4f" font-size="12" text-anchor="middle">evidence now names a different system</text></g>
 <line x1="330" y1="576" x2="378" y2="576" stroke="#888" stroke-width="1.5" marker-end="url(#arrow)"/>
-<g><rect x="388" y="548" width="252" height="56" rx="8" fill="#20222a" stroke="#5f5e5a" stroke-width="0.5"/><text x="514" y="570" fill="#b4b2a9" font-size="14" font-weight="500" text-anchor="middle">Memory stays asleep</text><text x="514" y="588" fill="#88877f" font-size="12" text-anchor="middle">same prompt, different answer</text></g>
+<g><rect x="388" y="548" width="252" height="56" rx="8" fill="#20222a" stroke="#5f5e5a" stroke-width="0.5"/><text x="514" y="570" fill="#b4b2a9" font-size="14" font-weight="500" text-anchor="middle">Memory stays asleep</text><text x="514" y="588" fill="#88877f" font-size="12" text-anchor="middle">same prompt · reverts again (61%)</text></g>
 </svg>
