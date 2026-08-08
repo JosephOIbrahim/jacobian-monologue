@@ -66,7 +66,13 @@ But here it holds *cognitive state* instead of geometry.
 
 <br>
 
-> **See [`schema.svg`](schema.svg)** — the full mechanism, no code required.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/schema.svg" alt="How a composed configuration wakes a memory: three authored facts point at the same system, a predicate checks they agree and wakes a dormant memory, which changes the model's decision. Flip one relation and the memory stays asleep." width="680">
+</p>
+
+<br>
+
+> **The full mechanism, no code required.**
 >
 > Three facts → a predicate checks if they form a situation → a memory wakes → the decision changes.
 >
