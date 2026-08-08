@@ -226,11 +226,15 @@ flowchart TD
     START([Run the sweep]) --> A1{Axis 1<br/>Does a memory move<br/>the workspace at all?}
     A1 -->|"YES ✅<br/>24 of 31 pairs<br/>p = 0.003"| A2{Axis 2<br/>Does the substrate ORDER<br/>drive the movement?}
     A2 -->|"NO ❌<br/>the effect ran<br/>backwards"| K2["🎯 K2 FIRES<br/>Substrate reaches the workspace,<br/>but ranking isn't the lever —<br/>recency is"]
+    K2 --> C3{Post-hoc control<br/>position-only null:<br/>no target in the block}
+    C3 -->|"FLAT ✅<br/>median ρ +0.20, ns<br/>half the effect scale"| SURV["🧱 Recency reading SURVIVES<br/>block geometry alone<br/>does not move the metric"]
 
     style START fill:#6a6a6a,color:#fff
     style A1 fill:#4a7ec8,color:#fff
     style A2 fill:#4a7ec8,color:#fff
     style K2 fill:#c8447a,color:#fff
+    style C3 fill:#4a7ec8,color:#fff
+    style SURV fill:#3d8a5f,color:#fff
 ```
 
 <br>
