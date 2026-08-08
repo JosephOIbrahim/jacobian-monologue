@@ -1,0 +1,29 @@
+# CPU-only benchmark subset + unit tests on every push.
+# Deliberately quiet: no badge in the README (locked at v0.1.0: rigor and
+# restraint, not ornament). GPU sections (model, VRAM, prefill, end-to-end)
+# cannot run on hosted runners and are honestly skipped via --cpu-only;
+# the reference GPU numbers live in benchmarks/results.json, produced on
+# the dev machine by benchmarks/run.ps1.
+name: bench-cpu
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  cpu-subset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install (CPU torch + USD + package)
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install usd-core==26.8
+          pip install -e . pytest
+      - name: Unit tests
+        run: pytest tests -q
+      - name: USD gate + echo guard benchmarks (CPU subset)
+        run: python benchmarks/bench.py --cpu-only

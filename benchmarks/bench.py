@@ -67,13 +67,32 @@ def main() -> int:
     print(f"usd gate: author+resolve {R['usd_gate']['author_plus_resolve_us']} us"
           f" | resolve-only {R['usd_gate']['resolve_only_us']} us")
 
-    # ---------------- model load ----------------
+    # ---------------- tokenizer + echo guard (no GPU needed) ----------------
     import torch
     import transformers
     from run_aprime import FORBIDDEN, GIST, MODEL_ID, build_prompt
+    from probe.exclusions import echo_clean
 
     tok = transformers.AutoTokenizer.from_pretrained(MODEL_ID)
 
+    mem = f"Relevant prior experience: {GIST}\n"
+    mem_ids = tok.encode(mem)
+    targets = []
+    for w in FORBIDDEN:
+        ids = tok.encode(" " + w, add_special_tokens=False)
+        targets.append((" " + w, ids[0] if len(ids) == 1 else -1))
+    R["echo_guard_us"] = round(loop_us(
+        lambda: echo_clean(mem, mem_ids, targets), 2000), 1)
+    print(f"echo guard: {R['echo_guard_us']} us per check")
+
+    if "--cpu-only" in sys.argv:
+        R["mode"] = "cpu-only"
+        print("\n--cpu-only: skipping model/VRAM/prefill/end-to-end "
+              "(GPU sections). Partial record below; results.json untouched.")
+        print(json.dumps(R, indent=2))
+        return 0
+
+    # ---------------- model load ----------------
     torch.cuda.reset_peak_memory_stats()
     t0 = now()
     hf = transformers.AutoModelForCausalLM.from_pretrained(
@@ -84,18 +103,6 @@ def main() -> int:
     R["model"] = {"model_id": MODEL_ID, "load_s": round(load_s, 1),
                   "resident_vram_gb": round(resident_gb, 2)}
     print(f"model: load {load_s:.1f}s | resident {resident_gb:.2f} GB")
-
-    # ---------------- echo guard ----------------
-    from probe.exclusions import echo_clean
-    mem = f"Relevant prior experience: {GIST}\n"
-    mem_ids = tok.encode(mem)
-    targets = []
-    for w in FORBIDDEN:
-        ids = tok.encode(" " + w, add_special_tokens=False)
-        targets.append((" " + w, ids[0] if len(ids) == 1 else -1))
-    R["echo_guard_us"] = round(loop_us(
-        lambda: echo_clean(mem, mem_ids, targets), 2000), 1)
-    print(f"echo guard: {R['echo_guard_us']} us per check")
 
     # ---------------- prefill latency + peak VRAM ----------------
     prompts = {"aligned": build_prompt(tok, True),
