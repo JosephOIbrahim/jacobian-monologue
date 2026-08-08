@@ -1,0 +1,14 @@
+<svg width="100%" viewBox="0 0 1200 240" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Archivo, sans-serif">
+<title>Jacobian Monologue</title>
+<rect x="0.5" y="0.5" width="1199" height="239" fill="#F8F5F0" stroke="#C9C2B4" stroke-width="1"/>
+<text x="64" y="112" fill="#16150F" font-size="52" font-weight="600">Jacobian Monologue</text>
+<text x="64" y="154" fill="#8A8377" font-size="19">An OpenUSD substrate that wakes a model's memory &#8212; and flips its decision.</text>
+<g fill="none" stroke="#A49B8C" stroke-width="1.25" stroke-linecap="round">
+<path d="M920 60 V84 Q920 96 932 96 H1006 Q1018 96 1018 108"/>
+<path d="M1116 60 V84 Q1116 96 1104 96 H1030 Q1018 96 1018 108"/>
+<path d="M1018 60 V118"/>
+<path d="M1010 108 L1018 118 L1026 108"/>
+</g>
+<text x="1018" y="172" fill="#E8442E" font-size="30" font-weight="600" text-anchor="middle">9% &#8594; 65%</text>
+<text x="1018" y="196" fill="#8A8377" font-size="13" text-anchor="middle">one relation</text>
+</svg>

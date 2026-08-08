@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/banner-dark.svg">
+  <img src="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/banner-light.svg" alt="Jacobian Monologue - an OpenUSD substrate that wakes a model's memory and flips its decision, 9% to 65%" width="100%">
+</picture>
+
 # Jacobian Monologue
 
 ### Can a memory system change what an AI *decides* — not just what it reads?
@@ -244,6 +249,7 @@ It's also *why* the USD experiment is designed the way it is: it controls the ex
 ### What we found
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables':{'lineColor':'#A49B8C','textColor':'#16150F','fontFamily':'Archivo, Helvetica, Arial, sans-serif','edgeLabelBackground':'#F8F5F0'}}}%%
 flowchart TD
     START([Run the sweep]) --> A1{Axis 1<br/>Does a memory move<br/>the workspace at all?}
     A1 -->|"YES ✅<br/>24 of 31 pairs<br/>p = 0.003"| A2{Axis 2<br/>Does the substrate ORDER<br/>drive the movement?}
@@ -251,12 +257,12 @@ flowchart TD
     K2 --> C3{Post-hoc control<br/>position-only null:<br/>no target in the block}
     C3 -->|"FLAT ✅<br/>median ρ +0.20, ns<br/>half the effect scale"| SURV["🧱 Recency reading SURVIVES<br/>block geometry alone<br/>does not move the metric"]
 
-    style START fill:#6a6a6a,color:#fff
-    style A1 fill:#4a7ec8,color:#fff
-    style A2 fill:#4a7ec8,color:#fff
-    style K2 fill:#c8447a,color:#fff
-    style C3 fill:#4a7ec8,color:#fff
-    style SURV fill:#3d8a5f,color:#fff
+    style START fill:#EDE8DF,stroke:#C9C2B4,color:#16150F
+    style A1 fill:#F8F5F0,stroke:#16150F,color:#16150F
+    style A2 fill:#F8F5F0,stroke:#16150F,color:#16150F
+    style K2 fill:#E8442E,stroke:#E8442E,color:#F8F5F0
+    style C3 fill:#F8F5F0,stroke:#16150F,color:#16150F
+    style SURV fill:#3E7A54,stroke:#3E7A54,color:#F8F5F0
 ```
 
 <br>
