@@ -353,7 +353,7 @@ The substrate check reports `SKIP` if the proprietary substrate isn't installed 
 
 Needs a CUDA GPU.
 
-**What it costs:** ~10 GB VRAM · ~5 min setup (torch is the big download) · ~2 min per experiment run.
+**What it costs (measured):** 8.6 GB peak VRAM · ~5 min first-time setup (torch is the big download) · model loads in ~5 s from cache · the headline run completes in **0.47 s** after load; the robustness suite ~2 min. The USD gate itself resolves in **19 µs** — ~12,000× cheaper than one model forward. Full numbers and the script: [`benchmarks/`](benchmarks/).
 
 **What success looks like** — the headline run is `experiments/m7_usd_wake/run_aprime.py`. When it works, the last lines read:
 

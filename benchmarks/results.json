@@ -1,0 +1,50 @@
+{
+  "benchmark": "instrument-costs",
+  "run_date": "2026-08-08",
+  "usd_version": [
+    0,
+    26,
+    8
+  ],
+  "usd_gate": {
+    "author_plus_resolve_us": 553.1,
+    "resolve_only_us": 19.2
+  },
+  "model": {
+    "model_id": "Qwen/Qwen3.5-4B",
+    "load_s": 4.6,
+    "resident_vram_gb": 8.51
+  },
+  "echo_guard_us": 1.1,
+  "prefill_ms": {
+    "aligned": {
+      "median": 229.1,
+      "tokens": 107
+    },
+    "counterfactual": {
+      "median": 226.2,
+      "tokens": 59
+    }
+  },
+  "peak_vram_gb": 8.63,
+  "aprime_end_to_end": {
+    "seconds": 0.47,
+    "picks": {
+      "aligned": "B",
+      "counterfactual": "A"
+    },
+    "decision_flipped": true
+  },
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "python": "3.12.10",
+    "os": "Windows 11"
+  },
+  "gate_vs_forward": {
+    "resolve_x_cheaper": 11932,
+    "author_plus_resolve_x_cheaper": 414
+  },
+  "note": "environment-dependent reference numbers; the headline is the measured ratio: predicate resolution is 11932x cheaper than one model forward on this machine -- the USD gate is free relative to inference"
+}
