@@ -1,4 +1,4 @@
-# InternalMonologue
+# Jacobian Monologue
 
 ### Can a memory system change what an AI *decides* — not just what it reads?
 
@@ -9,6 +9,10 @@ A memory system chooses what it sees. And this repo shows that whisper can chang
 Flip one fact in a composed situation, and the model changes its answer.
 
 Same prompt, word for word. That's the result — and you can watch it happen.
+
+<br>
+
+> **In one sentence, for researchers:** a relational configuration composed in OpenUSD gates whether a memory reaches a language model; a woken memory whose content contradicts the model's prior flips its forced-choice decision, and a one-relation counterfactual toggles the effect off — holding across scenarios behind a pre-registered fairness gate, through the token channel rather than direct activation writes.
 
 <br>
 
@@ -304,6 +308,27 @@ python scripts/verify.py     # 7 green checks = you're good
 Needs a CUDA GPU and a checkout of the substrate being tested.
 
 Don't have it? Supply your own ranker — the interface is in `src/probe/substrate.py`.
+
+---
+
+<br>
+
+## 📚 Citing this work
+
+If you reference this experiment, please cite it. A machine-readable [`CITATION.cff`](CITATION.cff) is included — GitHub renders a **"Cite this repository"** button in the sidebar from it.
+
+```
+Ibrahim, J. O. (2026). Jacobian Monologue: Configuration-Gated Memory
+Delivery to a Language Model (v0.1.0). https://github.com/JosephOIbrahim/jacobian-monologue
+```
+
+<br>
+
+## ⚖️ License & IP
+
+The code in this repository is shared **for review and citation, not for reuse** — see [`LICENSE`](LICENSE). You're welcome to read, study, and cite it; copying, modifying, or commercial use requires written permission.
+
+The **memory substrate** this work measures is proprietary and the subject of pending patent applications. It is not included here, and nothing in this repository licenses it. Everything you see is the *instrument* that measures the substrate — the substrate itself stays closed.
 
 ---
 

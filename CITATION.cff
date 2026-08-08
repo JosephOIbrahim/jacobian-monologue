@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you reference this work, please cite it as below."
+title: "Jacobian Monologue: Configuration-Gated Memory Delivery to a Language Model"
+abstract: >-
+  An experiment testing whether a relational configuration, composed in OpenUSD
+  as a non-3D data layer, can gate whether a memory reaches a language model and
+  thereby change the model's decision. A predicate over independently-authored
+  facts wakes a dormant memory whose content contradicts the model's prior; the
+  woken memory flips the model's forced-choice decision, and a one-relation
+  counterfactual (holding all else identical) toggles the effect off. The result
+  holds across multiple scenarios behind a pre-registered fairness gate. The
+  memory reaches the model through the token stream, not by writing activations
+  directly. A companion pre-registered experiment returns an honest null on a
+  separate question (whether substrate ranking, rather than recency, drives
+  workspace occupancy).
+type: software
+authors:
+  - family-names: Ibrahim
+    given-names: Joseph O.
+    orcid: "https://orcid.org/0009-0009-2689-4966"
+version: 0.1.0
+date-released: "2026-08-07"
+url: "https://github.com/JosephOIbrahim/jacobian-monologue"
+repository-code: "https://github.com/JosephOIbrahim/jacobian-monologue"
+keywords:
+  - interpretability
+  - mechanistic interpretability
+  - language models
+  - AI memory
+  - cognitive architecture
+  - OpenUSD
+  - Jacobian lens
+license-url: "https://github.com/JosephOIbrahim/jacobian-monologue/blob/master/LICENSE"

@@ -1,0 +1,38 @@
+All Rights Reserved
+
+Copyright (c) 2026 Joseph O. Ibrahim
+
+This repository is shared publicly for review, evaluation, and citation.
+
+WHAT THIS MEANS
+
+You are welcome to:
+  - Read, study, and reference this code and its results.
+  - Cite this work in academic or technical writing (see CITATION.cff).
+  - Discuss and link to it.
+
+You may NOT, without prior written permission:
+  - Copy, reproduce, or redistribute this code in whole or in part.
+  - Modify or create derivative works from it.
+  - Use it, or any part of it, for commercial purposes.
+  - Incorporate it into another product or system.
+
+THE SUBSTRATE
+
+The memory substrate that this repository measures is proprietary and is the
+subject of pending patent applications. It is NOT included in this repository.
+Nothing in this repository grants any license, express or implied, to that
+substrate or to any invention claimed in the associated patent filings.
+
+THIRD-PARTY DEPENDENCIES
+
+This repository references, but does not include, third-party software (notably
+the Jacobian lens, referenced as an external dependency under its own license).
+Those components remain governed by their respective licenses.
+
+NO WARRANTY
+
+This code is provided "as is," without warranty of any kind. The author is not
+liable for any claim, damages, or other liability arising from its use.
+
+For licensing inquiries, contact the author.
