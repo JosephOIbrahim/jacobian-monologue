@@ -326,9 +326,12 @@ Delivery to a Language Model (v0.1.0). https://github.com/JosephOIbrahim/jacobia
 
 ## ⚖️ License & IP
 
-The code in this repository is shared **for review and citation, not for reuse** — see [`LICENSE`](LICENSE). You're welcome to read, study, and cite it; copying, modifying, or commercial use requires written permission.
+The code in this repository — the measurement instrument — is licensed under **Apache 2.0** ([`LICENSE`](LICENSE)). You're free to use, modify, and build on it, including commercially. Two asks, both light:
 
-The **memory substrate** this work measures is proprietary and the subject of pending patent applications. It is not included here, and nothing in this repository licenses it. Everything you see is the *instrument* that measures the substrate — the substrate itself stays closed.
+- **Keep the notice.** Apache requires the [`NOTICE`](NOTICE) file to travel with the code.
+- **Credit it if you use it publicly.** If this work shows up in research, a product, a demo, or published writing, please credit *Joseph O. Ibrahim, "Jacobian Monologue"* (details in `NOTICE`).
+
+The **memory substrate** this work measures is a different matter. It's proprietary, the subject of pending patent applications, and **not included here** — the repo ships an interface, not the substrate. The Apache license covers only the instrument; it grants nothing to the substrate or to any claimed invention. Everything you can see is how the substrate is *measured* — the substrate itself stays closed.
 
 ---
 
