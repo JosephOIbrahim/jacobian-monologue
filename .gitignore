@@ -22,3 +22,6 @@ package.json
 package-lock.json
 
 RELEASE_NOTES_*.md
+
+# token-saver accepted-state (local scratch, never committed)
+.token-saver/
