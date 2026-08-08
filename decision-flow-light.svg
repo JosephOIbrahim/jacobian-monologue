@@ -1,0 +1,41 @@
+<svg width="100%" viewBox="0 0 1200 1030" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Archivo, sans-serif">
+<title>What we found: the m1 to m6 verdict flow</title>
+<desc>Run the sweep. Axis 1: does a memory move the workspace at all? Yes, 24 of 31 pairs, p = 0.003. Axis 2: does the substrate order drive the movement? No, the effect ran backwards. K2 fires: substrate reaches the workspace, but ranking is not the lever, recency is. Post-hoc control, position-only null with no target in the block: flat, median rho +0.20 ns, half the effect scale. Recency reading survives: block geometry alone does not move the metric.</desc>
+<rect width="1200" height="1030" fill="#F8F5F0"/>
+<rect x="480" y="40" width="240" height="56" rx="28" fill="#EDE8DF"/>
+<text x="600" y="75" fill="#16150F" font-size="20" font-weight="500" text-anchor="middle">Run the sweep</text>
+<g fill="none" stroke="#A49B8C" stroke-width="1.25" stroke-linecap="round">
+<path d="M600 96 V138"/><path d="M590 126 L600 138 L610 126"/>
+</g>
+<rect x="320" y="150" width="560" height="96" rx="12" fill="#F8F5F0" stroke="#16150F" stroke-width="1.5"/>
+<text x="352" y="186" fill="#8A8377" font-size="13" letter-spacing="1.8" font-weight="500">AXIS 1</text>
+<text x="352" y="220" fill="#16150F" font-size="20">Does a memory move the workspace at all?</text>
+<g fill="none" stroke="#A49B8C" stroke-width="1.25" stroke-linecap="round">
+<path d="M600 246 V318"/><path d="M590 306 L600 318 L610 306"/>
+</g>
+<text x="616" y="290" font-size="16"><tspan fill="#3E7A54" font-weight="600">YES</tspan><tspan fill="#8A8377"> &#183; 24 of 31 pairs &#183; p = 0.003</tspan></text>
+<rect x="320" y="330" width="560" height="96" rx="12" fill="#F8F5F0" stroke="#16150F" stroke-width="1.5"/>
+<text x="352" y="366" fill="#8A8377" font-size="13" letter-spacing="1.8" font-weight="500">AXIS 2</text>
+<text x="352" y="400" fill="#16150F" font-size="20">Does the substrate ORDER drive the movement?</text>
+<g fill="none" stroke="#A49B8C" stroke-width="1.25" stroke-linecap="round">
+<path d="M600 426 V498"/><path d="M590 486 L600 498 L610 486"/>
+</g>
+<text x="616" y="470" font-size="16"><tspan fill="#E8442E" font-weight="600">NO</tspan><tspan fill="#8A8377"> &#183; the effect ran backwards</tspan></text>
+<rect x="320" y="510" width="560" height="124" rx="12" fill="#E8442E"/>
+<text x="352" y="548" fill="#FCFBF9" font-size="13" letter-spacing="1.8" font-weight="600">K2 FIRES</text>
+<text x="352" y="580" fill="#FCFBF9" font-size="19">Substrate reaches the workspace, but ranking</text>
+<text x="352" y="606" fill="#FCFBF9" font-size="19">isn't the lever &#8212; recency is</text>
+<g fill="none" stroke="#A49B8C" stroke-width="1.25" stroke-linecap="round">
+<path d="M600 634 V688"/><path d="M590 676 L600 688 L610 676"/>
+</g>
+<rect x="320" y="700" width="560" height="96" rx="12" fill="#F8F5F0" stroke="#16150F" stroke-width="1.5"/>
+<text x="352" y="736" fill="#8A8377" font-size="13" letter-spacing="1.8" font-weight="500">POST-HOC CONTROL</text>
+<text x="352" y="770" fill="#16150F" font-size="20">position-only null: no target in the block</text>
+<g fill="none" stroke="#A49B8C" stroke-width="1.25" stroke-linecap="round">
+<path d="M600 796 V868"/><path d="M590 856 L600 868 L610 856"/>
+</g>
+<text x="616" y="840" font-size="16"><tspan fill="#3E7A54" font-weight="600">FLAT</tspan><tspan fill="#8A8377"> &#183; median &#961; +0.20, ns &#183; half the effect scale</tspan></text>
+<rect x="320" y="880" width="560" height="110" rx="12" fill="#3E7A54"/>
+<text x="352" y="918" fill="#FCFBF9" font-size="13" letter-spacing="1.8" font-weight="600">RECENCY READING SURVIVES</text>
+<text x="352" y="950" fill="#FCFBF9" font-size="19">block geometry alone does not move the metric</text>
+</svg>

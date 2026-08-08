@@ -248,22 +248,10 @@ It's also *why* the USD experiment is designed the way it is: it controls the ex
 
 ### What we found
 
-```mermaid
-%%{init: {'theme':'base','themeVariables':{'lineColor':'#A49B8C','textColor':'#16150F','fontFamily':'Archivo, Helvetica, Arial, sans-serif','edgeLabelBackground':'#F8F5F0'}}}%%
-flowchart TD
-    START([Run the sweep]) --> A1{Axis 1<br/>Does a memory move<br/>the workspace at all?}
-    A1 -->|"YES ✅<br/>24 of 31 pairs<br/>p = 0.003"| A2{Axis 2<br/>Does the substrate ORDER<br/>drive the movement?}
-    A2 -->|"NO ❌<br/>the effect ran<br/>backwards"| K2["🎯 K2 FIRES<br/>Substrate reaches the workspace,<br/>but ranking isn't the lever —<br/>recency is"]
-    K2 --> C3{Post-hoc control<br/>position-only null:<br/>no target in the block}
-    C3 -->|"FLAT ✅<br/>median ρ +0.20, ns<br/>half the effect scale"| SURV["🧱 Recency reading SURVIVES<br/>block geometry alone<br/>does not move the metric"]
-
-    style START fill:#EDE8DF,stroke:#C9C2B4,color:#16150F
-    style A1 fill:#F8F5F0,stroke:#16150F,color:#16150F
-    style A2 fill:#F8F5F0,stroke:#16150F,color:#16150F
-    style K2 fill:#E8442E,stroke:#E8442E,color:#F8F5F0
-    style C3 fill:#F8F5F0,stroke:#16150F,color:#16150F
-    style SURV fill:#3E7A54,stroke:#3E7A54,color:#F8F5F0
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/decision-flow-dark.svg">
+  <img src="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/decision-flow-light.svg" alt="The verdict flow. Axis 1: does a memory move the workspace at all? YES - 24 of 31 pairs, p = 0.003. Axis 2: does the substrate ORDER drive the movement? NO - the effect ran backwards. K2 fires: substrate reaches the workspace, but ranking isn't the lever - recency is. Post-hoc control, position-only null: FLAT - median rho +0.20, ns, half the effect scale. Recency reading survives: block geometry alone does not move the metric." width="100%">
+</picture>
 
 <br>
 
@@ -339,6 +327,7 @@ results/figure.png    the one plot
 schema.svg            the codeless diagram of the USD wake mechanism
 schema-social.svg     the same diagram, designed for daylight (the README serves this)
 schema-social-dark.svg   its dark twin, served to dark-mode readers
+decision-flow-*.svg   the m1-m6 verdict flow, light + dark (README serves both)
 WRITEUP.md            the full engineering writeup
 ```
 
