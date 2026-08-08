@@ -75,7 +75,7 @@ def _moved() -> bool:
         return True
     return False
 
-STALE = _moved() or bool(flags)
+STALE = _moved() or bool(flags) or ("--force-sync" in sys.argv)
 
 # ---------------- generated content ----------------
 g = NEW["usd_gate"]
@@ -109,11 +109,17 @@ RATIO = (f"**The headline is a ratio, not an absolute:** resolving the composed-
          f"The gate is free relative to inference \u2014 composition adds recognition, not\n"
          f"latency.")
 
-COSTS = (f"**What it costs (measured):** {peak:.1f} GB peak VRAM \u00b7 ~5 min first-time setup "
-         f"(torch is the big download) \u00b7 model loads in ~{round(load)} s from cache \u00b7 the "
-         f"headline run completes in **{e2e} s** after load; the robustness suite ~2 min. "
-         f"The USD gate itself resolves in **{resolve} \u00b5s** \u2014 ~{rx_disp}\u00d7 cheaper than one "
-         f"model forward. Full numbers and the script: [`benchmarks/`](benchmarks/).")
+COSTS = (f"**What it costs \u2014 measured, not guessed:**\n"
+         f"\n"
+         f"- **{peak:.1f} GB** peak VRAM\n"
+         f"- **~5 min** first-time setup \u2014 torch is the big download\n"
+         f"- **~{round(load)} s** model load from cache\n"
+         f"- **{e2e} s** headline run, start to verdict\n"
+         f"- **~2 min** full robustness suite\n"
+         f"- **{resolve} \u00b5s** for the USD gate itself \u2014 ~{rx_disp}\u00d7 "
+         f"cheaper than one model forward\n"
+         f"\n"
+         f"Full numbers + the script: [`benchmarks/`](benchmarks/)")
 
 
 def splice(path: Path, tag: str, body: str) -> bool:

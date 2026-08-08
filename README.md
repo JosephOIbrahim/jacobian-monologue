@@ -337,27 +337,84 @@ WRITEUP.md            the full engineering writeup
 
 ## 🚀 Running it
 
-Full walkthrough — including an artist-friendly version — in [`INSTALL.md`](INSTALL.md).
+Full walkthrough — written for someone who thinks in layers and renders, not terminals — in [`INSTALL.md`](INSTALL.md).
 
-The 30-second shape:
+<br>
+
+**You need:** an NVIDIA GPU (a 4090 is plenty) · Python 3.12 · `uv`
+
+<br>
+
+**Five commands. One job each.**
+
+<br>
+
+**1 — Make a clean workspace** &nbsp; *(a fresh scene file — nothing touches your other work)*
 
 ```bash
 uv venv --python 3.12
-uv pip install torch --index-url https://download.pytorch.org/whl/cu128
-uv pip install "jlens @ git+https://github.com/anthropics/jacobian-lens"
-uv pip install -e .
-python scripts/verify.py     # a green board = you're good
 ```
 
-The substrate check reports `SKIP` if the proprietary substrate isn't installed — that's expected and fine. It's only needed for the m1–m4 ranking probe; **the m7 headline experiment never touches it.** To run m1–m4 without the substrate, supply your own ranker — the interface is in `src/probe/substrate.py`.
+<br>
 
-Needs a CUDA GPU.
+**2 — Get the render engine** &nbsp; *(the model runtime · ~2.5 GB · grab a coffee)*
+
+```bash
+uv pip install torch --index-url https://download.pytorch.org/whl/cu128
+```
+
+<br>
+
+**3 — Get the loupe** &nbsp; *(Anthropic's lens — installed from its home, not copied here)*
+
+```bash
+uv pip install "jlens @ git+https://github.com/anthropics/jacobian-lens"
+```
+
+<br>
+
+**4 — Wire in the experiment**
+
+```bash
+uv pip install -e .
+```
+
+<br>
+
+**5 — Did the scene load clean?**
+
+```bash
+python scripts/verify.py
+```
+
+A green board = you're good.
+
+One line may say `SKIP substrate` — **normal and fine.** The proprietary substrate only matters for the m1–m4 ranking probe; the m7 headline experiment never touches it. (Want m1–m4 anyway? Supply your own ranker — interface in `src/probe/substrate.py`.)
 
 <!-- BENCH:COSTS:START -->
-**What it costs (measured):** 8.6 GB peak VRAM · ~5 min first-time setup (torch is the big download) · model loads in ~5 s from cache · the headline run completes in **0.47 s** after load; the robustness suite ~2 min. The USD gate itself resolves in **19 µs** — ~12,000× cheaper than one model forward. Full numbers and the script: [`benchmarks/`](benchmarks/).
+**What it costs — measured, not guessed:**
+
+- **8.6 GB** peak VRAM
+- **~5 min** first-time setup — torch is the big download
+- **~5 s** model load from cache
+- **0.47 s** headline run, start to verdict
+- **~2 min** full robustness suite
+- **19 µs** for the USD gate itself — ~12,000× cheaper than one model forward
+
+Full numbers + the script: [`benchmarks/`](benchmarks/)
 <!-- BENCH:COSTS:END -->
 
-**What success looks like** — the headline run is `experiments/m7_usd_wake/run_aprime.py`. When it works, the last lines read:
+<br>
+
+**Now run the headline experiment:**
+
+```bash
+python experiments/m7_usd_wake/run_aprime.py
+```
+
+<br>
+
+**What success looks like** — the last lines you want to see:
 
 ```text
 P(B=cache): counterfactual 9% -> aligned 65%  (gain +55%)
