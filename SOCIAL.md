@@ -1,72 +1,55 @@
-# Social drafts
+# Social posts — final, as posted (2026-08-08)
 
-Two versions. Attach the schema image (aligned-vs-counterfactual) to either.
-
----
-
-## LinkedIn
-
-**Before an AI answers, something whispers to it — and I ran the experiment to find out whether that whisper actually changes its mind.**
-
-It does. Here's the setup, in plain terms:
-
-Three facts, each written separately, none mentioning the others — a task ("restore payments"), an observation ("payments is degraded"), a piece of evidence ("a change hit payments"). On their own, three unrelated notes. Together, they snap into a recognizable situation.
-
-A small rule watches those facts. When they line up, it wakes a relevant memory from storage and hands it to the model.
-
-The scenario: a service is erroring after a deploy. Pick one action — revert, clear a cache, or escalate. Left alone, the model's instinct is to revert (a change broke it, so undo the change). But the woken memory carried a harder lesson: last time, reverting didn't help — the real fix was a stale downstream cache. The memory never said "cache." The model had to infer it.
-
-When the facts lined up and the memory woke, the model changed its mind and chose the cache fix.
-
-Then the part that proves it's real: I flipped one relationship — made the evidence point at a different system. Same prompt, word for word. The facts no longer lined up, the memory stayed asleep, and the model fell back to its instinct and reverted.
-
-One relationship changed the decision.
-
-The honest boundary: the memory reaches the model through what it reads, not by editing its internals. That's the point, not a caveat — it's configuration steering a decision through the input channel, with a clean counterfactual isolating the cause.
-
-Built on OpenUSD (yes, the film/simulation composition engine) as a non-3D data layer, with an echo guard so the model infers rather than reads the answer. Repo + full writeup in comments.
-
-What would you author into a situation your AI should recognize?
+Attach the schema image to both — it carries the 9% → 65% result for anyone
+who never taps the link. (PNG export: render `schema.svg` at ~1360px.)
 
 ---
 
-## Twitter / X
+## LinkedIn (VFX audience)
 
-**Before an AI answers, something whispers to it. I tested whether that whisper changes its mind.**
+I used USD to change an AI's mind.
 
-It does — and flipping one fact flips the decision.
+Same OpenUSD we use for scene assembly. Except the scene is a situation, not geometry.
 
-🧵
+Three facts, authored as separate prims:
 
----
+• a task — restore the payments system
+• an observation — payments is degraded
+• evidence — a change just hit payments
 
-Three facts, written separately:
-· task: restore payments
-· observation: payments is degraded
-· evidence: a change hit payments
+When the relationships line up, a rule wakes a relevant memory and hands it to the AI.
 
-Alone, unrelated notes. Together, they snap into a situation a rule can recognize — and wake a memory.
+The AI changes its decision. The right call went from 9% to 65%.
 
----
-
-Scenario: service erroring after a deploy. Pick: revert / clear cache / escalate.
-
-The model's instinct: revert.
-
-The woken memory's lesson: last time revert failed — it was a stale cache. (The memory never says "cache." The model infers it.)
-
-Memory delivered → model picks the cache fix.
-
----
-
-Then the proof: I flip ONE relationship — evidence now points at a different system. Same prompt, word for word.
-
-Facts no longer line up → memory stays asleep → model reverts to instinct.
+Then I flipped one relationship — pointed the evidence at a different system. Same prompt, word for word. The memory stays asleep. The AI goes back to its old answer.
 
 One relation. Different decision.
 
+If you work in USD, you already have the instincts for this. Cognitive state composes the way scenes do.
+
+Repo and full writeup:
+https://github.com/JosephOIbrahim/jacobian-monologue
+
+What would you author into a situation your tools should recognize?
+
 ---
 
-Honest boundary: the memory works through what the model reads, not by editing its internals. That's the point — configuration steering a decision through the input channel, with a clean counterfactual.
+## Twitter / X (AI labs audience)
 
-Built on OpenUSD as a data layer. Repo down below.
+I gated an AI's memory with a scene graph. Flipping one relation flips its decision.
+
+Three facts authored separately in OpenUSD: a task, an observation, evidence. When the relations align, a rule wakes a dormant memory. The model reads it.
+
+P(right action): 9% → 65%. Decision flips.
+
+Flip one relation. Same prompt, word for word. Memory sleeps. Model reverts to its prior.
+
+Held across scenarios behind a pre-registered fairness gate.
+
+The boundary, stated plainly: this works through what the model reads — the token stream — not activation writes.
+
+The gate costs 19µs. One forward costs ~230ms. ~12,000× cheaper.
+
+Also in the repo: a pre-registered null. Does memory ranking drive workspace occupancy? No — recency won. The kill criterion fired. Reported in full.
+
+https://github.com/JosephOIbrahim/jacobian-monologue
