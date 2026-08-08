@@ -1,4 +1,4 @@
-# Benchmarks — measured, not estimated
+# Benchmarks - measured, not estimated
 
 One script, the numbers reviewers ask about. Run it:
 
@@ -6,7 +6,7 @@ One script, the numbers reviewers ask about. Run it:
 .venv/Scripts/python.exe benchmarks/bench.py
 ```
 
-It reproduces the headline flip as a side effect — exit code 0 means the
+It reproduces the headline flip as a side effect - exit code 0 means the
 decision flipped on your machine too.
 
 ## Reference machine (RTX 4090 · torch 2.11.0+cu128)
@@ -28,7 +28,7 @@ decision flipped on your machine too.
 **The headline is a ratio, not an absolute:** resolving the composed-stage
 predicate is **~12,000× cheaper** than one model forward. Authoring the entire
 USD world-model from scratch *and* resolving it is still **~400× cheaper**.
-The gate is free relative to inference — composition adds recognition, not
+The gate is free relative to inference - composition adds recognition, not
 latency.
 <!-- BENCH:RATIO:END -->
 
@@ -49,16 +49,16 @@ What it enforces:
 
 - **Docs can't drift.** The table above, the ratio paragraph, and the cost
   line in the root README are regenerated from `results.json` between marker
-  comments — [`autodoc.py`](autodoc.py) is the only writer.
+  comments - [`autodoc.py`](autodoc.py) is the only writer.
 - **Regressions are loud.** Fresh numbers compare against the committed
   baseline at HEAD: resolve >2×, prefill >1.5×, peak VRAM >1.1×, end-to-end
   >2×, or a failed flip trips exit 2 and a `REGRESSION` commit. A regression
   is a result, not noise.
 - **Jitter is silent.** Displayed numbers hold still inside per-metric noise
   bands; if nothing moves beyond tolerance and nothing trips, the run leaves
-  the tree clean — no noise commits.
+  the tree clean - no noise commits.
 
 CI runs the CPU subset (`bench.py --cpu-only`: USD gate + echo guard) plus the
-unit tests on every push — deliberately no badge, per the v0.1.0 restraint
+unit tests on every push - deliberately no badge, per the v0.1.0 restraint
 lock. For weekly hands-free local runs: [`register_weekly.ps1`](register_weekly.ps1)
-(run it yourself once — registering a scheduled task stays a human call).
+(run it yourself once - registering a scheduled task stays a human call).

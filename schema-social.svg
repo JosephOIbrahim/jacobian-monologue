@@ -68,6 +68,6 @@
 <text x="692" y="1146" fill="#8A8377" font-size="17">same prompt &#183; reverts again (61%)</text>
 </g>
 <line x1="84" y1="1240" x2="1116" y2="1240" stroke="#C9C2B4" stroke-width="1"/>
-<text x="84" y="1272" fill="#8A8377" font-size="14">Jacobian Monologue &#8212; the USD wake mechanism</text>
+<text x="84" y="1272" fill="#8A8377" font-size="14">Jacobian Monologue - the USD wake mechanism</text>
 <text x="1116" y="1272" fill="#8A8377" font-size="14" text-anchor="end">github.com/JosephOIbrahim/jacobian-monologue</text>
 </svg>

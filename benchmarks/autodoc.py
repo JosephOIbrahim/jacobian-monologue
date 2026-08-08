@@ -106,17 +106,17 @@ TABLE = f"""| What | Measured |
 RATIO = (f"**The headline is a ratio, not an absolute:** resolving the composed-stage\n"
          f"predicate is **~{rx_disp}\u00d7 cheaper** than one model forward. Authoring the entire\n"
          f"USD world-model from scratch *and* resolving it is still **~{ax_disp}\u00d7 cheaper**.\n"
-         f"The gate is free relative to inference \u2014 composition adds recognition, not\n"
+         f"The gate is free relative to inference - composition adds recognition, not\n"
          f"latency.")
 
-COSTS = (f"**What it costs \u2014 measured, not guessed:**\n"
+COSTS = (f"**What it costs - measured, not guessed:**\n"
          f"\n"
          f"- **{peak:.1f} GB** peak VRAM\n"
-         f"- **~5 min** first-time setup \u2014 torch is the big download\n"
+         f"- **~5 min** first-time setup - torch is the big download\n"
          f"- **~{round(load)} s** model load from cache\n"
          f"- **{e2e} s** headline run, start to verdict\n"
          f"- **~2 min** full robustness suite\n"
-         f"- **{resolve} \u00b5s** for the USD gate itself \u2014 ~{rx_disp}\u00d7 "
+         f"- **{resolve} \u00b5s** for the USD gate itself - ~{rx_disp}\u00d7 "
          f"cheaper than one model forward\n"
          f"\n"
          f"Full numbers + the script: [`benchmarks/`](benchmarks/)")

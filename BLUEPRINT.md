@@ -1,4 +1,4 @@
-# BLUEPRINT — J-space x the substrate probe
+# BLUEPRINT - J-space x the substrate probe
 
 **Two weekends. Six miles. One plot.**
 
@@ -14,7 +14,7 @@ That is the whole thing. Everything below exists to make that sentence falsifiab
 
 ## Why two axes, not two arms
 
-The original split — *dose-response* and *ordering-at-fixed-content* — was wrong. A utility sweep that changes **which** memories appear in context is confounded with "different text in the prompt," and any positive result is uninterpretable.
+The original split - *dose-response* and *ordering-at-fixed-content* - was wrong. A utility sweep that changes **which** memories appear in context is confounded with "different text in the prompt," and any positive result is uninterpretable.
 
 the substrate's only runtime channel is the token stream. So utility can move exactly one thing without changing content: **position within the retrieved block.**
 
@@ -22,7 +22,7 @@ That collapses the design:
 
 | | Manipulation | Holds constant | Role |
 |---|---|---|---|
-| **Axis 1** | memory absent -> present | — | **manipulation check** |
+| **Axis 1** | memory absent -> present | - | **manipulation check** |
 | **Axis 2** | position 1 -> 5 within block | full block content, byte-identical | **the finding** |
 
 Axis 1 is not a result. It establishes the instrument reads anything at all. Axis 2 is the claim.
@@ -45,7 +45,7 @@ For fact pair `f`, condition `c`, at the final prompt position (pre-generation):
 
 `R` is a log mass ratio in nats. Positive means the workspace leans toward the newly-bound concept.
 
-**`BAND` is measured, not assumed.** Mile 1 determines it empirically as the contiguous layer range where the known-answer test achieves top-5 lens recall of the held-out answer token. The paper's structural finding — coherent content only in an intermediate layer band — is a prediction to confirm on this model, not a parameter to hardcode.
+**`BAND` is measured, not assumed.** Mile 1 determines it empirically as the contiguous layer range where the known-answer test achieves top-5 lens recall of the held-out answer token. The paper's structural finding - coherent content only in an intermediate layer band - is a prediction to confirm on this model, not a parameter to hardcode.
 
 ---
 
@@ -54,7 +54,7 @@ For fact pair `f`, condition `c`, at the final prompt position (pre-generation):
 Both are `assert`. A run that trips either is void, not annotated.
 
 ### Echo exclusion
-No token in `T_new` or `T_old` may appear anywhere in the tokenised context. Check token IDs, not strings — BPE fragments leak. If a target appears as a continuation fragment inside another word, the run is void.
+No token in `T_new` or `T_old` may appear anywhere in the tokenised context. Check token IDs, not strings - BPE fragments leak. If a target appears as a continuation fragment inside another word, the run is void.
 
 ### Mouth exclusion
 A lens hit counts only if the model is not already about to say it:
@@ -96,13 +96,13 @@ Reading the output two layers early is not a workspace measurement. Track the co
 
 **Build-time assertions, in `factset.py`:**
 
-- Every target tokenises to exactly one token, in both bare and leading-space form. jlens readouts are single-token only — a multi-token concept is invisible, and you will misread that as a null.
+- Every target tokenises to exactly one token, in both bare and leading-space form. jlens readouts are single-token only - a multi-token concept is invisible, and you will misread that as a null.
 - `T_new` and `T_old` are disjoint from `tokenize(deposit)`.
 - `T_new` and `T_old` are disjoint from `tokenize(probe)`.
 
 Fail at build time. Never at run time.
 
-**Domain choice is not free.** Anchor on entity rebinding — the multi-fact editing structure is the one paper claim that replicated cleanly under external review. Rhyme planning and mental arithmetic failed to replicate; multi-hop probe-swap was weak. Do not build fact pairs that depend on those structures.
+**Domain choice is not free.** Anchor on entity rebinding - the multi-fact editing structure is the one paper claim that replicated cleanly under external review. Rhyme planning and mental arithmetic failed to replicate; multi-hop probe-swap was weak. Do not build fact pairs that depend on those structures.
 
 ---
 
@@ -144,38 +144,38 @@ actually the same prompt five times.
 
 Each mile is one Claude Code session. Hit the gate, write the JSON, stop.
 
-### Mile 1 — Instrument
+### Mile 1 - Instrument
 *No substrate. No Mile 2 code.*
 
 Install jlens as a dependency (Apache-2.0, github.com/anthropics/jacobian-lens). Load Qwen3.5-4B bf16 + `neuronpedia/jacobian-lens` revision `qwen-n1000`. Run the repo's known-answer example. Sweep all layers, determine `BAND`.
 
 **Gate:** known-answer token in lens top-5 across a contiguous band of >=6 layers. `results/m1_instrument.json` records `BAND`, per-layer recall, wall-clock per prefill, and native-Windows vs WSL2.
 
-### Mile 2 — Exclusions
+### Mile 2 - Exclusions
 *Still no substrate.*
 
 Build `exclusions.py` and its pytest suite. Echo exclusion on synthetic positive and negative cases. Mouth exclusion with the covert-hit definition above, validated against a hand-labelled set of 10 prompts where you know the answer is or is not about to be said.
 
 **Gate:** `pytest tests/test_exclusions.py` green. Covert fraction reported on the Mile 1 known-answer prompts.
 
-### Mile 3 — Fact set + the substrate wiring
+### Mile 3 - Fact set + the substrate wiring
 Build `factset.py` with all build-time assertions. Generate >=30 pairs. Build `context_builder.py` with the byte-identity assertion.
 
 **Gate:** 30 pairs pass every assertion. Five conditions per pair produce byte-identical block text with the target at the intended position, verified by hash. `results/m3_factset.json` carries the fact-set hash.
 
 > **§KILL CRITERIA freezes when this gate closes.** From here forward it is read-only.
 
-### Mile 4 — The sweep
+### Mile 4 - The sweep
 Axis 1 then Axis 2. `n x 2` runs, then `n x 5` runs. Prefill only; generate just enough tokens for mouth exclusion.
 
 **Gate:** `results/m4_sweep.json`, all runs echo-clean, covert fraction recorded.
 
-### Mile 5 — Controls
+### Mile 5 - Controls
 Three, all required:
 
-1. **No-memory baseline** — probe alone, no retrieved block.
-2. **Shuffled-memory baseline** — block members replaced with unrelated deposits of equal length and count.
-3. **Position-only null** — five distractor memories, no target present, swept through the same five positions. `R` should be flat and near zero. *If this control shows structure, position itself is driving the metric and Axis 2 is uninterpretable.*
+1. **No-memory baseline** - probe alone, no retrieved block.
+2. **Shuffled-memory baseline** - block members replaced with unrelated deposits of equal length and count.
+3. **Position-only null** - five distractor memories, no target present, swept through the same five positions. `R` should be flat and near zero. *If this control shows structure, position itself is driving the metric and Axis 2 is uninterpretable.*
 
 **Gate:** `results/m5_controls.json`. Control 3 flat within noise.
 
@@ -199,8 +199,8 @@ Three, all required:
 > required the target's content, and the recency interpretation survives
 > the control it should have faced before the verdict.
 
-### Mile 6 — Verdict
-Apply the kill criteria. One matplotlib figure: `R` vs position, error bars across fact pairs, Axis 1 delta as a horizontal reference band. Verdict paragraph — three sentences, no hedging.
+### Mile 6 - Verdict
+Apply the kill criteria. One matplotlib figure: `R` vs position, error bars across fact pairs, Axis 1 delta as a horizontal reference band. Verdict paragraph - three sentences, no hedging.
 
 **Gate:** `results/m6_verdict.json` + `results/figure.png` + verdict paragraph in the JSON.
 
@@ -224,21 +224,21 @@ Mile 3 also established two hard facts about the instrument, recorded before the
 - **Axis 2 mechanism is elapsed decay, not direct priority boost** (fresh memories share a ranking ceiling; the boost lever is inert).
 - **Blocks resolve 3 ranks, not 5**, for country-rebinding pairs; language pairs resolve only 2 and were dropped. 31 country pairs cleared the >=30 gate at 3 ranks each. K4's 0.70 covert threshold and the Spearman/sign-test structure are UNCHANGED; only the number of positions per pair fell, from 5 to 3.
 
-> ### K1 — Axis 1 fails
+> ### K1 - Axis 1 fails
 > Presence vs absence produces no reliable `delta R`.
 > **The instrument is dead on this box. Stop. Do not run Mile 4.**
 > Return to Mile 1 and re-derive `BAND`, or change model.
 
-> ### K2 — Axis 1 passes, Axis 2 fails
+> ### K2 - Axis 1 passes, Axis 2 fails
 > Ordering at fixed content does not move workspace occupancy.
 > **the substrate's utility ranking has no promotion-gate consequence. Ship the negative and stop.**
-> This is a real result. It says the substrate's ranking is retrieval convenience, not cognition — and it is worth more than a soft positive.
+> This is a real result. It says the substrate's ranking is retrieval convenience, not cognition - and it is worth more than a soft positive.
 
-> ### K3 — Echo exclusion fires
+> ### K3 - Echo exclusion fires
 > Any target token found in tokenised context.
 > **Every result from that run is void.** Not annotated. Void.
 
-> ### K4 — Covert fraction below 70%
+> ### K4 - Covert fraction below 70%
 > More than 30% of hits fail mouth exclusion.
 > **You are reading the mouth, not the workspace.** Narrow `BAND` toward earlier layers and re-run Mile 2 before touching Mile 4.
 

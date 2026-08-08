@@ -2,7 +2,7 @@
 <title>Jacobian Monologue</title>
 <rect x="0.5" y="0.5" width="1199" height="239" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
 <text x="64" y="112" fill="#e6edf3" font-size="52" font-weight="600">Jacobian Monologue</text>
-<text x="64" y="154" fill="#8b949e" font-size="19">An OpenUSD substrate that wakes a model's memory &#8212; and flips its decision.</text>
+<text x="64" y="154" fill="#8b949e" font-size="19">An OpenUSD substrate that wakes a model's memory - and flips its decision.</text>
 <g fill="none" stroke="#484f58" stroke-width="1.25" stroke-linecap="round">
 <path d="M920 60 V84 Q920 96 932 96 H1006 Q1018 96 1018 108"/>
 <path d="M1116 60 V84 Q1116 96 1104 96 H1030 Q1018 96 1018 108"/>

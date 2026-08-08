@@ -24,7 +24,7 @@
 <rect x="320" y="510" width="560" height="124" rx="12" fill="#f85149"/>
 <text x="352" y="548" fill="#ffffff" font-size="13" letter-spacing="1.8" font-weight="600">K2 FIRES</text>
 <text x="352" y="580" fill="#ffffff" font-size="19">Substrate reaches the workspace, but ranking</text>
-<text x="352" y="606" fill="#ffffff" font-size="19">isn't the lever &#8212; recency is</text>
+<text x="352" y="606" fill="#ffffff" font-size="19">isn't the lever - recency is</text>
 <g fill="none" stroke="#484f58" stroke-width="1.25" stroke-linecap="round">
 <path d="M600 634 V688"/><path d="M590 676 L600 688 L610 676"/>
 </g>
