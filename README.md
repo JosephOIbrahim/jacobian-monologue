@@ -10,15 +10,24 @@ Flip one fact in a composed situation, and the model changes its answer.
 
 Same prompt, word for word. That's the result — and you can watch it happen.
 
+**The result, in one line:** memory woken → P(correct action) **9% → 65%**, the decision flips. Flip one authored relation back → the memory sleeps, the effect is off.
+
 <br>
 
 > **In one sentence, for researchers:** a relational configuration composed in OpenUSD gates whether a memory reaches a language model; a woken memory whose content contradicts the model's prior flips its forced-choice decision, and a one-relation counterfactual toggles the effect off — holding across scenarios behind a pre-registered fairness gate, through the token channel rather than direct activation writes.
 
 <br>
 
-*Read in any order. Every section stands alone.*
+*Pick your depth:*
 
-*Skim the pictures, or go deep into the code. Both work.*
+| ⏱ You have | Go to |
+|---|---|
+| **30 seconds** | [The 30-second version](#-the-30-second-version) |
+| **2 minutes** | [The story, plainly](#-the-story-plainly) |
+| **10 minutes** | [For the engineers](#-for-the-engineers) |
+| **A GPU and curiosity** | [Running it](#-running-it) |
+
+*Every section stands alone. Skim the pictures or go deep — both work.*
 
 <br>
 
@@ -157,7 +166,16 @@ Aligned and counterfactual differ by exactly one authored relationship. Everythi
 
 **It holds across scenarios, not one lucky case**
 
-The flip reproduced across multiple distinct incidents — database latency, memory growth, incident response — each with its own counterintuitive memory, behind a pre-registered fairness gate. Where a base scenario wasn't genuinely ambiguous, that case was flagged and excluded rather than counted. See [`results/m7_robustness.json`](results/m7_robustness.json).
+The flip reproduced across multiple distinct incidents — database latency, memory growth, incident response — each with its own counterintuitive memory, behind a pre-registered fairness gate. The numbers, straight from [`results/m7_robustness.json`](results/m7_robustness.json):
+
+| Scenario | P(memory-implied action), dormant → woken | Verdict |
+|---|---|---|
+| payments / stale cache | 9% → **65%** | ✅ flips |
+| latency / stale index | 3% → **74%** | ✅ flips |
+| memory leak / handler | 22% → **82%** | ✅ flips |
+| auth / clock drift | 46% → 69% | ⚠️ **excluded** — base case wasn't ambiguous, so the fairness gate voided it |
+
+Where a base scenario wasn't genuinely ambiguous, that case was flagged and excluded rather than counted — the row is shown anyway, because that's what a gate looks like when it fires.
 
 <br>
 
@@ -179,9 +197,10 @@ That gating measurably changes the model's decision — flipping its chosen acti
 
 ### 🚧 What this does *not* prove
 
-The memory reaches the model through the token stream — through what it **reads** — not by writing to its internals directly.
-
-That boundary is the honest frame: configuration steering an emission-ready decision through the input channel. Naming it is what makes the rest trustworthy.
+> [!IMPORTANT]
+> The memory reaches the model through the token stream — through what it **reads** — not by writing to its internals directly.
+>
+> That boundary is the honest frame: configuration steering an emission-ready decision through the input channel. Naming it is what makes the rest trustworthy.
 
 <br>
 
@@ -239,7 +258,12 @@ flowchart TD
 
 <br>
 
-**Why "backwards"?**
+**Position-next-to-the-question mattered. The utility score didn't.**
+
+<details>
+<summary><b>Why "backwards"? — the confound, in 20 seconds</b></summary>
+
+<br>
 
 When the substrate pushed a memory *down* its ranking, that memory landed *closer to the question* in the text.
 
@@ -247,17 +271,22 @@ Closer to the question = more influence.
 
 So lower-ranked memories had *more* effect — the opposite of the prediction.
 
-**Position-next-to-the-question mattered. The utility score didn't.**
+</details>
 
 <br>
 
-The numbers, if you want them:
+<details>
+<summary><b>The numbers, if you want them</b></summary>
+
+<br>
 
 | Test | Predicted | Measured | Verdict |
 |---|---|---|---|
 | Memory moves workspace | positive | **+0.52 nat, 24/31, p=0.003** | ✅ direction confirmed; pre-registered magnitude bar (>1.0 nat) not met |
 | Ranking drives it | ρ < −0.5 | **ρ = +1.0** (inverted) | ❌ recency won |
 | Lens sees hidden thought | ≥ 0.70 | **0.006** | ❌ near-invisible here |
+
+</details>
 
 <br>
 
@@ -273,7 +302,8 @@ When a "kill criterion" fires, you stop and report it. You don't explain it away
 
 **K2 fired. This README reports it.**
 
-One deviation is on the record too: a pre-registered control mile (m5) was not run before the verdict — the K2 protocol (ship the negative, stop) was followed straight from the sweep. That gap is documented in [`BLUEPRINT.md`](BLUEPRINT.md), and the key control — a position-only null, no target anywhere in the block — was executed afterward, clearly labelled post-hoc. It came back flat: block geometry alone doesn't move the metric, so the recency reading stands on a control, not just an interpretation. See [`results/m5_control3_posthoc.json`](results/m5_control3_posthoc.json).
+> [!NOTE]
+> One deviation is on the record too: a pre-registered control mile (m5) was not run before the verdict — the K2 protocol (ship the negative, stop) was followed straight from the sweep. That gap is documented in [`BLUEPRINT.md`](BLUEPRINT.md), and the key control — a position-only null, no target anywhere in the block — was executed afterward, clearly labelled post-hoc. It came back flat: block geometry alone doesn't move the metric, so the recency reading stands on a control, not just an interpretation. See [`results/m5_control3_posthoc.json`](results/m5_control3_posthoc.json).
 
 That discipline is the difference between a finding and a story.
 
@@ -322,6 +352,18 @@ python scripts/verify.py     # a green board = you're good
 The substrate check reports `SKIP` if the proprietary substrate isn't installed — that's expected and fine. It's only needed for the m1–m4 ranking probe; **the m7 headline experiment never touches it.** To run m1–m4 without the substrate, supply your own ranker — the interface is in `src/probe/substrate.py`.
 
 Needs a CUDA GPU.
+
+**What it costs:** ~10 GB VRAM · ~5 min setup (torch is the big download) · ~2 min per experiment run.
+
+**What success looks like** — the headline run is `experiments/m7_usd_wake/run_aprime.py`. When it works, the last lines read:
+
+```text
+P(B=cache): counterfactual 9% -> aligned 65%  (gain +55%)
+argmax: counterfactual=A aligned=B  flipped=True
+VERDICT: USD CONFIGURATION CHANGES THE DECISION
+```
+
+If you see that verdict line, you've reproduced the result. Anything less prints exactly what was measured instead — the script never rounds up.
 
 ---
 
