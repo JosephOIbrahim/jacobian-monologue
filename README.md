@@ -3,8 +3,6 @@
   <img src="https://raw.githubusercontent.com/JosephOIbrahim/jacobian-monologue/master/banner-light.svg" alt="Jacobian Monologue - an OpenUSD substrate that wakes a model's memory and flips its decision, 9% to 65%" width="100%">
 </picture>
 
-# Jacobian Monologue
-
 ### Can a memory system change what an AI *decides* — not just what it reads?
 
 **Before your AI answers, something whispers to it.**
